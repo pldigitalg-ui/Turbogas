@@ -1,1 +1,688 @@
+<!-- =========================================
+PRODUTOS
+========================================= -->
 
+<section class="products"
+id="produtos">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>Nossos produtos</h2>
+
+<a href="#">
+
+Ver todos
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+</div>
+
+<!-- GRID -->
+
+<div class="products-grid">
+
+<!-- =========================================
+PRODUTO 1
+========================================= -->
+
+<div class="product-card fade-up app-card">
+
+<div class="product-top">
+
+<div class="product-badge">
+Mais vendido
+</div>
+
+<i class="fa-solid fa-fire"></i>
+
+</div>
+
+<div class="product-image">
+
+<img
+src="../imagem/hero1.jpg"
+alt="Ultragas">
+
+</div>
+
+<div class="product-content">
+
+<h3>Ultragas 13kg</h3>
+
+<p>
+Entrega rápida • Gás premium
+</p>
+
+<h2 class="product-price">
+R$ 115,00
+</h2>
+
+<div class="tag-delivery">
+
+<i class="fa-regular fa-clock"></i>
+
+Entrega em até 60 min
+
+</div>
+
+<!-- QUANTIDADE -->
+
+<div class="quantity-box">
+
+<button onclick="alterarQtd(0,-1)">
+-
+</button>
+
+<span id="qtd0">
+1
+</span>
+
+<button onclick="alterarQtd(0,1)">
++
+</button>
+
+</div>
+
+<!-- CARRINHO -->
+
+<button
+onclick="adicionarCarrinho(
+'Ultragas 13kg',
+115,
+0
+)"
+class="btn-product">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+</div>
+
+<!-- =========================================
+PRODUTO 2
+========================================= -->
+
+<div class="product-card fade-up app-card">
+
+<div class="product-top">
+
+<div class="product-badge">
+Entrega turbo
+</div>
+
+<i class="fa-solid fa-bolt"></i>
+
+</div>
+
+<div class="product-image">
+
+<img
+src="../imagem/hero2.jpg"
+alt="Supergasbras">
+
+</div>
+
+<div class="product-content">
+
+<h3>Supergasbras 13kg</h3>
+
+<p>
+Entrega rápida • Gás premium
+</p>
+
+<h2 class="product-price">
+R$ 120,00
+</h2>
+
+<div class="tag-delivery">
+
+<i class="fa-regular fa-clock"></i>
+
+Entrega em até 60 min
+
+</div>
+
+<div class="quantity-box">
+
+<button onclick="alterarQtd(1,-1)">
+-
+</button>
+
+<span id="qtd1">
+1
+</span>
+
+<button onclick="alterarQtd(1,1)">
++
+</button>
+
+</div>
+
+<button
+onclick="adicionarCarrinho(
+'Supergasbras 13kg',
+120,
+1
+)"
+class="btn-product">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+</div>
+
+<!-- =========================================
+PRODUTO 3
+========================================= -->
+
+<div class="product-card fade-up app-card">
+
+<div class="product-top">
+
+<div class="product-badge">
+Oferta premium
+</div>
+
+<i class="fa-solid fa-star"></i>
+
+</div>
+
+<div class="product-image">
+
+<img
+src="../imagem/hero3.jpg"
+alt="Liquigás">
+
+</div>
+
+<div class="product-content">
+
+<h3>Liquigás 13kg</h3>
+
+<p>
+Entrega rápida • Alta qualidade
+</p>
+
+<h2 class="product-price">
+R$ 125,00
+</h2>
+
+<div class="tag-delivery">
+
+<i class="fa-regular fa-clock"></i>
+
+Entrega em até 60 min
+
+</div>
+
+<div class="quantity-box">
+
+<button onclick="alterarQtd(2,-1)">
+-
+</button>
+
+<span id="qtd2">
+1
+</span>
+
+<button onclick="alterarQtd(2,1)">
++
+</button>
+
+</div>
+
+<button
+onclick="adicionarCarrinho(
+'Liquigás 13kg',
+125,
+2
+)"
+class="btn-product">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+</div>
+
+<!-- =========================================
+PRODUTO 4
+========================================= -->
+
+<div class="product-card fade-up app-card">
+
+<div class="product-top">
+
+<div class="product-badge">
+Água mineral
+</div>
+
+<i class="fa-solid fa-bottle-water"></i>
+
+</div>
+
+<div class="product-image">
+
+<img
+src="../imagem/agua.jpg"
+alt="Água Mineral">
+
+</div>
+
+<div class="product-content">
+
+<h3>Galão Água 20L</h3>
+
+<p>
+Água mineral gelada
+</p>
+
+<h2 class="product-price">
+R$ 18,00
+</h2>
+
+<div class="tag-delivery">
+
+<i class="fa-regular fa-clock"></i>
+
+Entrega rápida
+
+</div>
+
+<div class="quantity-box">
+
+<button onclick="alterarQtd(3,-1)">
+-
+</button>
+
+<span id="qtd3">
+1
+</span>
+
+<button onclick="alterarQtd(3,1)">
++
+</button>
+
+</div>
+
+<button
+onclick="adicionarCarrinho(
+'Galão Água 20L',
+18,
+3
+)"
+class="btn-product">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Adicionar ao carrinho
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =========================================
+CARRINHO FIXO
+========================================= -->
+
+<div class="cart-fixed">
+
+<div class="cart-top">
+
+<h3>
+Meu carrinho
+</h3>
+
+<span id="cart-count">
+0 itens
+</span>
+
+</div>
+
+<div id="cart-items">
+
+<p class="empty-cart">
+Seu carrinho está vazio
+</p>
+
+</div>
+
+<div class="cart-footer">
+
+<h2>
+
+Total:
+<span id="cart-total">
+R$ 0,00
+</span>
+
+</h2>
+
+<a
+id="finalizarPedido"
+href="#"
+target="_blank"
+class="btn-finish">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Finalizar pedido
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+CSS EXTRA
+========================================= -->
+
+<style>
+
+.quantity-box{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:22px;
+}
+
+.quantity-box button{
+width:42px;
+height:42px;
+border:none;
+cursor:pointer;
+
+border-radius:14px;
+
+background:#edf3ff;
+color:#031b4e;
+
+font-size:1.2rem;
+font-weight:900;
+
+transition:.3s;
+}
+
+.quantity-box button:hover{
+background:#ff9800;
+color:#fff;
+}
+
+.quantity-box span{
+font-size:1rem;
+font-weight:800;
+min-width:20px;
+text-align:center;
+}
+
+.cart-fixed{
+margin-top:60px;
+
+background:#fff;
+color:#031b4e;
+
+padding:34px;
+
+border-radius:34px;
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.08);
+}
+
+.cart-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:24px;
+}
+
+.cart-top h3{
+font-size:1.5rem;
+font-weight:900;
+}
+
+#cart-items{
+display:flex;
+flex-direction:column;
+gap:16px;
+
+margin-bottom:26px;
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px;
+
+border-radius:18px;
+
+background:#f4f7ff;
+}
+
+.cart-item h4{
+font-size:1rem;
+margin-bottom:5px;
+}
+
+.cart-item p{
+font-size:.92rem;
+color:#64729b;
+}
+
+.empty-cart{
+color:#64729b;
+}
+
+.cart-footer{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.cart-footer h2{
+font-size:1.6rem;
+font-weight:900;
+}
+
+.cart-footer h2 span{
+color:#ff9800;
+}
+
+.btn-finish{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+
+padding:18px 28px;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+135deg,
+#25d366,
+#1ebe5d
+);
+
+color:#fff;
+font-weight:800;
+
+transition:.35s;
+}
+
+.btn-finish:hover{
+transform:translateY(-4px);
+}
+
+@media(max-width:768px){
+
+.cart-footer{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.btn-finish{
+width:100%;
+}
+
+}
+
+</style>
+
+<!-- =========================================
+SCRIPT CARRINHO
+========================================= -->
+
+<script>
+
+let carrinho = [];
+
+let quantidades = [1,1,1,1];
+
+function alterarQtd(index, valor){
+
+quantidades[index] += valor;
+
+if(quantidades[index] < 1){
+
+quantidades[index] = 1;
+
+}
+
+document.getElementById(
+`qtd${index}`
+).innerText = quantidades[index];
+
+}
+
+function adicionarCarrinho(
+produto,
+preco,
+index
+){
+
+const qtd = quantidades[index];
+
+carrinho.push({
+produto,
+preco,
+qtd
+});
+
+renderCarrinho();
+
+}
+
+function renderCarrinho(){
+
+const cartItems =
+document.getElementById('cart-items');
+
+const cartCount =
+document.getElementById('cart-count');
+
+const cartTotal =
+document.getElementById('cart-total');
+
+const finalizar =
+document.getElementById('finalizarPedido');
+
+cartItems.innerHTML = '';
+
+let total = 0;
+
+let mensagem =
+'Olá, vim pelo site da Turbo Gás e quero pedir:%0A%0A';
+
+carrinho.forEach(item => {
+
+const subtotal =
+item.preco * item.qtd;
+
+total += subtotal;
+
+mensagem +=
+`${item.produto} - ${item.qtd}x - R$ ${subtotal},00%0A`;
+
+cartItems.innerHTML += `
+
+<div class="cart-item">
+
+<div>
+
+<h4>${item.produto}</h4>
+
+<p>
+${item.qtd} unidade(s)
+</p>
+
+</div>
+
+<strong>
+R$ ${subtotal},00
+</strong>
+
+</div>
+
+`;
+
+});
+
+if(carrinho.length <= 0){
+
+cartItems.innerHTML = `
+<p class="empty-cart">
+Seu carrinho está vazio
+</p>
+`;
+
+}
+
+cartCount.innerText =
+`${carrinho.length} itens`;
+
+cartTotal.innerText =
+`R$ ${total},00`;
+
+mensagem +=
+`%0ATotal: R$ ${total},00`;
+
+finalizar.href =
+`https://wa.me/5531997044271?text=${mensagem}`;
+
+}
+
+</script>
