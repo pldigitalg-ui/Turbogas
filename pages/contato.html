@@ -1,1 +1,946 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contato | Turbo Gás</title>
+
+<meta
+name="description"
+content="Entre em contato com a Turbo Gás. Atendimento rápido via WhatsApp e entrega em Belo Horizonte e região.">
+
+<!-- GOOGLE FONTS -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<!-- FONT AWESOME -->
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* =========================================
+RESET
+========================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+html,
+body{
+overflow-x:hidden;
+width:100%;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#020b26;
+color:#fff;
+}
+
+/* =========================================
+BACKGROUND
+========================================= */
+
+body::before{
+content:'';
+
+position:fixed;
+inset:0;
+
+background:
+radial-gradient(circle at top right,
+rgba(15,63,255,.20),
+transparent 35%),
+
+radial-gradient(circle at left,
+rgba(255,140,0,.08),
+transparent 30%),
+
+linear-gradient(
+135deg,
+#02134d 0%,
+#002b8f 45%,
+#00154f 100%
+);
+
+z-index:-2;
+}
+
+/* =========================================
+CONTAINER
+========================================= */
+
+.container{
+width:100%;
+max-width:1380px;
+margin:auto;
+padding:0 5%;
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+.header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+
+z-index:999;
+
+padding:18px 0;
+
+background:rgba(2,11,38,.82);
+
+backdrop-filter:blur(18px);
+
+border-bottom:
+1px solid rgba(255,255,255,.06);
+}
+
+.nav-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:14px;
+text-decoration:none;
+}
+
+.logo-icon{
+width:54px;
+height:54px;
+
+border-radius:18px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:
+linear-gradient(
+135deg,
+#ff9800,
+#ffb347
+);
+
+font-size:1.3rem;
+
+box-shadow:
+0 0 30px rgba(255,152,0,.35);
+}
+
+.logo-text h2{
+font-size:1.9rem;
+font-weight:900;
+font-family:'Montserrat',sans-serif;
+line-height:1;
+}
+
+.logo-text p{
+font-size:.76rem;
+margin-top:4px;
+color:#d7d7d7;
+}
+
+.back-btn{
+display:flex;
+align-items:center;
+gap:10px;
+
+padding:14px 24px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.08);
+
+font-weight:700;
+
+transition:.35s;
+}
+
+.back-btn:hover{
+transform:translateY(-4px);
+
+border-color:#ff9800;
+}
+
+/* =========================================
+HERO
+========================================= */
+
+.contact-hero{
+padding:
+170px
+0
+90px;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:
+0.95fr
+1.05fr;
+
+gap:50px;
+align-items:center;
+}
+
+/* =========================================
+LEFT
+========================================= */
+
+.contact-content h1{
+font-size:5rem;
+line-height:.92;
+font-weight:900;
+
+letter-spacing:-4px;
+
+font-family:'Montserrat',sans-serif;
+
+margin-bottom:26px;
+}
+
+.contact-content h1 span{
+display:block;
+color:#ff9800;
+}
+
+.contact-content p{
+font-size:1.05rem;
+line-height:1.9;
+color:#d7d7d7;
+
+max-width:580px;
+
+margin-bottom:40px;
+}
+
+/* =========================================
+CARDS
+========================================= */
+
+.contact-cards{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.contact-card{
+display:flex;
+align-items:flex-start;
+gap:18px;
+
+padding:24px;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(16px);
+
+transition:.35s;
+}
+
+.contact-card:hover{
+transform:translateY(-6px);
+
+border-color:#ff9800;
+
+box-shadow:
+0 0 35px rgba(0,76,255,.18);
+}
+
+.contact-card i{
+width:58px;
+height:58px;
+
+border-radius:18px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:
+linear-gradient(
+135deg,
+#ff9800,
+#ffb347
+);
+
+font-size:1.2rem;
+
+flex-shrink:0;
+}
+
+.contact-card h3{
+font-size:1.1rem;
+margin-bottom:8px;
+font-weight:800;
+}
+
+.contact-card p{
+margin:0;
+font-size:.95rem;
+line-height:1.7;
+color:#d7d7d7;
+}
+
+.contact-card a{
+color:#ffb347;
+font-weight:700;
+}
+
+/* =========================================
+RIGHT
+========================================= */
+
+.contact-form-area{
+position:relative;
+}
+
+.contact-box{
+padding:40px;
+
+border-radius:34px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.30);
+}
+
+.contact-box h2{
+font-size:2rem;
+font-weight:900;
+
+margin-bottom:10px;
+
+font-family:'Montserrat',sans-serif;
+}
+
+.contact-box p{
+color:#d7d7d7;
+line-height:1.8;
+
+margin-bottom:30px;
+}
+
+/* =========================================
+FORM
+========================================= */
+
+.form-group{
+margin-bottom:20px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:10px;
+
+font-size:.92rem;
+font-weight:700;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+
+border:none;
+outline:none;
+
+padding:18px 20px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.06);
+
+font-family:'Inter',sans-serif;
+
+font-size:1rem;
+color:#fff;
+
+transition:.35s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+border-color:#ff9800;
+
+box-shadow:
+0 0 20px rgba(255,152,0,.16);
+}
+
+.form-group textarea{
+min-height:140px;
+resize:none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+color:#bfc7df;
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.contact-btn{
+width:100%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+
+border:none;
+cursor:pointer;
+
+padding:20px;
+
+border-radius:22px;
+
+background:
+linear-gradient(
+135deg,
+#ff9800,
+#ffae00
+);
+
+color:#fff;
+
+font-size:1rem;
+font-weight:800;
+
+transition:.35s;
+
+box-shadow:
+0 0 30px rgba(255,152,0,.25);
+}
+
+.contact-btn:hover{
+transform:translateY(-4px);
+}
+
+/* =========================================
+MAPS
+========================================= */
+
+.maps{
+padding:30px 0 80px;
+}
+
+.maps-box{
+overflow:hidden;
+
+border-radius:34px;
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.25);
+}
+
+.maps iframe{
+width:100%;
+height:500px;
+border:none;
+display:block;
+}
+
+/* =========================================
+WHATSAPP FLOAT
+========================================= */
+
+.floating-whatsapp{
+position:fixed;
+
+right:26px;
+bottom:26px;
+
+width:72px;
+height:72px;
+
+border-radius:50%;
+
+background:#25d366;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:1.9rem;
+color:#fff;
+
+z-index:999;
+
+box-shadow:
+0 0 35px rgba(37,211,102,.45);
+
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* =========================================
+PL CREDIT
+========================================= */
+
+.pl-credit{
+position:fixed;
+
+left:14px;
+bottom:10px;
+
+font-size:.74rem;
+font-weight:700;
+
+color:#00ff88;
+
+z-index:999;
+
+text-shadow:
+0 0 10px rgba(0,255,136,.55);
+}
+
+/* =========================================
+RESPONSIVO
+========================================= */
+
+@media(max-width:1100px){
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.contact-content{
+text-align:center;
+}
+
+.contact-content p{
+margin:auto auto 40px;
+}
+
+}
+
+@media(max-width:768px){
+
+.contact-hero{
+padding-top:140px;
+}
+
+.contact-content h1{
+font-size:3.2rem;
+letter-spacing:-2px;
+}
+
+.contact-box{
+padding:28px;
+border-radius:28px;
+}
+
+.maps iframe{
+height:360px;
+}
+
+.back-btn{
+padding:12px 18px;
+font-size:.88rem;
+}
+
+}
+
+@media(max-width:520px){
+
+.logo-text h2{
+font-size:1.35rem;
+}
+
+.logo-text p{
+font-size:.66rem;
+}
+
+.logo-icon{
+width:48px;
+height:48px;
+}
+
+.contact-content h1{
+font-size:2.4rem;
+letter-spacing:-1px;
+}
+
+.contact-content p{
+font-size:.96rem;
+}
+
+.contact-card{
+padding:20px;
+border-radius:24px;
+}
+
+.contact-card i{
+width:52px;
+height:52px;
+font-size:1rem;
+}
+
+.contact-box h2{
+font-size:1.7rem;
+}
+
+.maps iframe{
+height:300px;
+}
+
+.floating-whatsapp{
+width:64px;
+height:64px;
+font-size:1.6rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================
+HEADER
+========================================= -->
+
+<header class="header">
+
+<div class="container nav-container">
+
+<a href="../index.html"
+class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-fire-flame-curved"></i>
+</div>
+
+<div class="logo-text">
+
+<h2>TURBO GÁS</h2>
+
+<p>
+Entrega rápida e segura
+</p>
+
+</div>
+
+</a>
+
+<a href="../index.html"
+class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Voltar
+
+</a>
+
+</div>
+
+</header>
+
+<!-- =========================================
+HERO
+========================================= -->
+
+<section class="contact-hero">
+
+<div class="container contact-grid">
+
+<!-- LEFT -->
+
+<div class="contact-content">
+
+<h1>
+
+FALE COM A
+<span>TURBO GÁS</span>
+
+</h1>
+
+<p>
+
+Atendimento rápido via WhatsApp, entrega ágil e suporte completo para seu pedido de gás em Belo Horizonte e região.
+
+</p>
+
+<div class="contact-cards">
+
+<div class="contact-card">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+<div>
+
+<h3>WhatsApp</h3>
+
+<p>
+
+<a href="https://wa.me/5531997044271">
+(31) 99704-4271
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+<div class="contact-card">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<div>
+
+<h3>Endereço</h3>
+
+<p>
+Rua Antônio Mariano de Abreu, 478
+</p>
+
+</div>
+
+</div>
+
+<div class="contact-card">
+
+<i class="fa-regular fa-clock"></i>
+
+<div>
+
+<h3>Horário</h3>
+
+<p>
+Todos os dias • 07h às 22h
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="contact-form-area">
+
+<div class="contact-box">
+
+<h2>Envie uma mensagem</h2>
+
+<p>
+Preencha os dados abaixo e fale direto com nossa equipe.
+</p>
+
+<form id="contactForm">
+
+<div class="form-group">
+
+<label>
+Seu nome
+</label>
+
+<input
+type="text"
+id="nome"
+placeholder="Digite seu nome"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+WhatsApp
+</label>
+
+<input
+type="text"
+id="telefone"
+placeholder="(31) 99999-9999"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+Mensagem
+</label>
+
+<textarea
+id="mensagem"
+placeholder="Digite sua mensagem..."
+required></textarea>
+
+</div>
+
+<button
+type="submit"
+class="contact-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Enviar no WhatsApp
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+MAPS
+========================================= -->
+
+<section class="maps">
+
+<div class="container">
+
+<div class="maps-box">
+
+<iframe
+src="https://www.google.com/maps?q=Rua%20Antônio%20Mariano%20de%20Abreu,%20478&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+WHATSAPP FLOAT
+========================================= -->
+
+<a
+href="https://wa.me/5531997044271"
+target="_blank"
+class="floating-whatsapp">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<!-- =========================================
+PL CREDIT
+========================================= -->
+
+<a
+href="https://pldigital.com.br"
+target="_blank"
+class="pl-credit">
+
+Criado por PLdigital.com.br
+
+</a>
+
+<!-- =========================================
+SCRIPT
+========================================= -->
+
+<script>
+
+const form =
+document.getElementById('contactForm');
+
+form.addEventListener('submit', function(e){
+
+e.preventDefault();
+
+const nome =
+document.getElementById('nome').value;
+
+const telefone =
+document.getElementById('telefone').value;
+
+const mensagem =
+document.getElementById('mensagem').value;
+
+const texto =
+
+`Olá, vim pelo site da Turbo Gás.%0A%0A` +
+
+`Nome: ${nome}%0A` +
+
+`Telefone: ${telefone}%0A%0A` +
+
+`Mensagem:%0A${mensagem}`;
+
+window.open(
+`https://wa.me/5531997044271?text=${texto}`,
+'_blank'
+);
+
+});
+
+</script>
+
+</body>
+</html>
