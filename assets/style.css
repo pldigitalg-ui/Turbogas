@@ -1,4 +1,197 @@
 /* =========================================
+RESET GLOBAL
+========================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+html,
+body{
+overflow-x:hidden;
+font-family:'Inter',sans-serif;
+background:#041a68;
+color:#fff;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+.container{
+width:min(92%,1400px);
+margin:auto;
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+.header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+
+z-index:999;
+
+padding:18px 0;
+
+transition:.35s;
+}
+
+.header.scrolled{
+background:rgba(3,16,61,.88);
+backdrop-filter:blur(14px);
+
+box-shadow:
+0 10px 35px rgba(0,0,0,.18);
+}
+
+.nav-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.logo-icon{
+width:52px;
+height:52px;
+
+border-radius:18px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:
+linear-gradient(
+135deg,
+#ff9800,
+#ffb300
+);
+
+font-size:1.3rem;
+
+box-shadow:
+0 0 25px rgba(255,152,0,.28);
+}
+
+.logo-text h2{
+font-size:1.5rem;
+font-weight:900;
+line-height:1;
+}
+
+.logo-text p{
+font-size:.82rem;
+color:#d7def5;
+margin-top:5px;
+}
+
+.navbar{
+display:flex;
+align-items:center;
+gap:34px;
+}
+
+.navbar a{
+font-size:.96rem;
+font-weight:600;
+color:#eef3ff;
+
+transition:.3s;
+}
+
+.navbar a:hover{
+color:#ff9800;
+}
+
+.nav-actions{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.login-btn{
+display:flex;
+align-items:center;
+gap:10px;
+
+padding:14px 20px;
+
+border-radius:16px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+font-size:.92rem;
+font-weight:700;
+}
+
+.cart-btn{
+display:flex;
+align-items:center;
+gap:12px;
+
+padding:14px 22px;
+
+border-radius:16px;
+
+background:
+linear-gradient(
+135deg,
+#ff9800,
+#ffb300
+);
+
+font-weight:800;
+
+box-shadow:
+0 0 30px rgba(255,152,0,.28);
+}
+
+.cart-btn span{
+width:24px;
+height:24px;
+
+border-radius:50%;
+
+background:#fff;
+color:#041a68;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:.78rem;
+font-weight:900;
+}
+
+.menu-mobile{
+display:none;
+font-size:1.4rem;
+cursor:pointer;
+}
+
+/* =========================================
 HERO PREMIUM APP STYLE
 ========================================= */
 
@@ -8,9 +201,9 @@ overflow:hidden;
 min-height:100vh;
 
 padding:
-120px
+130px
 0
-60px;
+70px;
 
 background:
 linear-gradient(
@@ -299,6 +492,8 @@ align-items:center;
 justify-content:flex-end;
 
 overflow:visible;
+
+margin-right:-70px;
 }
 
 .hero-glow{
@@ -325,7 +520,7 @@ z-index:0;
 position:relative;
 z-index:2;
 
-width:115%;
+width:118%;
 height:100%;
 
 object-fit:cover;
@@ -423,82 +618,11 @@ border-top:1px solid rgba(255,255,255,.06);
 border-bottom:1px solid rgba(255,255,255,.06);
 }
 
-.slider-track{
-display:flex;
-align-items:center;
-gap:18px;
-
-width:max-content;
-
-animation:sliderGas 28s linear infinite;
-}
-
-.slider-track:hover{
-animation-play-state:paused;
-}
-
-.mini-gas-card{
-width:225px;
-height:106px;
-
-padding:14px;
-
-border-radius:22px;
-
-background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,255,255,.08);
-
-display:flex;
-align-items:center;
-gap:14px;
-
-backdrop-filter:blur(12px);
-
-overflow:hidden;
-
-transition:.35s;
-}
-
-.mini-gas-card:hover{
-transform:translateY(-6px);
-
-border-color:#ff9800;
-
-box-shadow:
-0 0 26px rgba(255,152,0,.18);
-}
-
-.mini-gas-card img{
-width:74px;
-height:74px;
-
-border-radius:18px;
-
-object-fit:cover;
-flex-shrink:0;
-}
-
-.mini-info h4{
-font-size:.92rem;
-font-weight:800;
-margin-bottom:4px;
-}
-
-.mini-info span{
-font-size:.76rem;
-color:#c7d0ef;
-}
-
 /* =========================================
 RESPONSIVO
 ========================================= */
 
 @media(max-width:1200px){
-
-.hero{
-padding-top:120px;
-}
 
 .hero-grid{
 grid-template-columns:1fr;
@@ -530,6 +654,7 @@ justify-content:center;
 
 .hero-image{
 height:650px;
+margin-right:0;
 }
 
 .hero-image img{
@@ -551,6 +676,14 @@ max-width:420px;
 }
 
 @media(max-width:768px){
+
+.navbar{
+display:none;
+}
+
+.menu-mobile{
+display:block;
+}
 
 .hero{
 padding-top:110px;
@@ -609,14 +742,13 @@ padding:22px;
 border-radius:24px;
 }
 
-.mini-gas-card{
-width:190px;
-height:98px;
-}
-
 }
 
 @media(max-width:520px){
+
+.logo-text h2{
+font-size:1.15rem;
+}
 
 .hero-content h1{
 font-size:2.4rem;
@@ -637,8 +769,9 @@ object-position:80% center;
 border-radius:24px;
 }
 
-.mini-gas-card{
-width:170px;
+.cart-btn{
+padding:12px 16px;
+font-size:.85rem;
 }
 
 }
