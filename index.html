@@ -21,17 +21,17 @@ content="Turbo Gás - Entrega rápida de gás em Belo Horizonte e região.">
 href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
 rel="stylesheet">
 
-<!-- CSS -->
-
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/mobile.css">
-<link rel="stylesheet" href="./css/animations.css">
-
 <!-- FONT AWESOME -->
 
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/mobile.css">
+<link rel="stylesheet" href="./css/animations.css">
 
 </head>
 
@@ -47,7 +47,7 @@ HEADER
 
 <!-- LOGO -->
 
-<a href="#" class="logo">
+<a href="./index.html" class="logo">
 
 <div class="logo-icon">
 <i class="fa-solid fa-fire-flame-curved"></i>
@@ -69,7 +69,7 @@ Entrega premium em BH
 
 <nav class="navbar" id="navbar">
 
-<a href="#">Início</a>
+<a href="./index.html">Início</a>
 
 <a href="#produtos">Produtos</a>
 
@@ -93,7 +93,7 @@ class="cart-btn">
 
 Carrinho
 
-<span>2</span>
+<span id="cart-count">2</span>
 
 </a>
 
@@ -162,6 +162,17 @@ class="btn-primary hero-main-btn pulse-btn">
 PEDIR AGORA
 
 </button>
+
+<a
+href="https://wa.me/5531997044271"
+target="_blank"
+class="btn-secondary">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+WhatsApp
+
+</a>
 
 </div>
 
@@ -712,14 +723,30 @@ Enviar pedido
 </div>
 
 <!-- =========================================
-SCRIPTS
+APP.JS
 ========================================= -->
 
 <script src="./js/app.js"></script>
+
+<!-- =========================================
+MODAL.JS
+========================================= -->
+
 <script src="./js/modal.js"></script>
+
+<!-- =========================================
+WHATSAPP.JS
+========================================= -->
+
 <script src="./js/whatsapp.js"></script>
 
+<!-- =========================================
+SCRIPT EXTRA
+========================================= -->
+
 <script>
+
+/* HEADER */
 
 const header = document.getElementById('header');
 
@@ -732,6 +759,22 @@ window.scrollY > 30
 
 });
 
+/* MOBILE MENU */
+
+const mobileMenu =
+document.getElementById('menu-mobile');
+
+const navbar =
+document.getElementById('navbar');
+
+mobileMenu.addEventListener('click', () => {
+
+navbar.classList.toggle('active');
+
+});
+
+/* MODAL */
+
 let produtoSelecionado = '';
 
 function abrirModal(produto){
@@ -742,6 +785,8 @@ document
 .getElementById('modalPedido')
 .style.display = 'flex';
 
+document.body.style.overflow = 'hidden';
+
 }
 
 function fecharModal(){
@@ -750,7 +795,26 @@ document
 .getElementById('modalPedido')
 .style.display = 'none';
 
+document.body.style.overflow = 'auto';
+
 }
+
+/* FECHAR CLICANDO FORA */
+
+window.addEventListener('click', (e) => {
+
+const modal =
+document.getElementById('modalPedido');
+
+if(e.target === modal){
+
+fecharModal();
+
+}
+
+});
+
+/* FORM */
 
 document
 .getElementById('pedidoForm')
@@ -782,6 +846,36 @@ window.open(
 `https://wa.me/5531997044271?text=${mensagem}`,
 '_blank'
 );
+
+fecharModal();
+
+});
+
+/* FADE UP */
+
+const fadeElements =
+document.querySelectorAll('.fade-up');
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show');
+
+}
+
+});
+
+},{
+threshold:0.2
+});
+
+fadeElements.forEach((el)=>{
+
+observer.observe(el);
 
 });
 
