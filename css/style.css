@@ -1,5 +1,6 @@
 /* =========================================
 TURBO GÁS PREMIUM CSS
+ALINHADO COM INDEX NOVO
 ========================================= */
 
 *{
@@ -40,6 +41,13 @@ color:inherit;
 img{
 max-width:100%;
 display:block;
+}
+
+button{
+border:none;
+outline:none;
+cursor:pointer;
+font-family:'Inter',sans-serif;
 }
 
 /* =========================================
@@ -91,6 +99,11 @@ backdrop-filter:blur(16px);
 
 box-shadow:
 0 10px 35px rgba(0,0,0,.35);
+}
+
+.header.scrolled{
+padding:12px 0;
+background:rgba(2,11,38,.96);
 }
 
 .nav-container{
@@ -364,8 +377,15 @@ BOTAO HERO
 
 .hero-buttons{
 display:flex;
-justify-content:center;
+justify-content:flex-start;
 align-items:center;
+}
+
+.btn-primary,
+.hero-main-btn,
+.btn-product{
+border:none;
+cursor:pointer;
 }
 
 .hero-main-btn{
@@ -382,6 +402,8 @@ display:flex;
 align-items:center;
 justify-content:center;
 gap:14px;
+
+color:#fff;
 
 background:
 linear-gradient(
@@ -530,36 +552,138 @@ box-shadow:
 0 0 40px rgba(0,76,255,.22);
 }
 
+.delivery-item{
+display:flex;
+align-items:flex-start;
+gap:16px;
+}
+
+.delivery-item i{
+font-size:1.3rem;
+color:#ff9800;
+margin-top:4px;
+}
+
+.delivery-item h4{
+font-size:1rem;
+margin-bottom:5px;
+}
+
+.delivery-item p{
+font-size:.88rem;
+color:#d7d7d7;
+line-height:1.6;
+}
+
+.divider{
+width:100%;
+height:1px;
+background:rgba(255,255,255,.10);
+margin:20px 0;
+}
+
 /* =========================================
-SLIDER FINAL
+SLIDER
 ========================================= */
 
-.final-slider{
-padding:90px 0;
+.gas-slider{
+padding:35px 0;
+overflow:hidden;
 
 background:
 linear-gradient(
 180deg,
-#021033,
+#03133f,
 #041b5c
 );
-overflow:hidden;
 }
 
-.slider-wrapper{
+.slider-track{
 display:flex;
 gap:24px;
 width:max-content;
 
-animation:sliderMove 28s linear infinite;
+animation:sliderMove 24s linear infinite;
 }
 
-.step-card{
-width:320px;
+.mini-gas-card{
+display:flex;
+align-items:center;
+gap:14px;
 
-padding:34px;
+min-width:280px;
 
-border-radius:28px;
+padding:18px 20px;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(12px);
+}
+
+.mini-gas-card img{
+width:70px;
+height:70px;
+object-fit:cover;
+border-radius:18px;
+}
+
+.mini-info h4{
+font-size:1rem;
+margin-bottom:4px;
+}
+
+.mini-info span{
+font-size:.84rem;
+color:#d7d7d7;
+}
+
+/* =========================================
+PRODUTOS
+========================================= */
+
+.products{
+padding:100px 0;
+}
+
+.section-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:50px;
+gap:20px;
+}
+
+.section-header h2{
+font-size:3rem;
+font-weight:900;
+font-family:'Montserrat',sans-serif;
+}
+
+.section-header a{
+display:flex;
+align-items:center;
+gap:10px;
+
+color:#ff9800;
+font-weight:800;
+}
+
+.products-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.product-card{
+position:relative;
+
+padding:24px;
+
+border-radius:34px;
 
 background:rgba(255,255,255,.06);
 
@@ -570,29 +694,158 @@ backdrop-filter:blur(16px);
 transition:.35s;
 }
 
-.step-card:hover{
+.product-card:hover{
 transform:translateY(-8px);
 
-border-color:#ff9800;
+border-color:rgba(255,152,0,.35);
 
 box-shadow:
-0 0 35px rgba(255,152,0,.18);
+0 0 40px rgba(255,152,0,.15);
 }
 
-.step-card i{
+.product-top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:20px;
+}
+
+.product-badge{
+padding:10px 16px;
+border-radius:50px;
+
+background:rgba(255,152,0,.14);
+
+font-size:.78rem;
+font-weight:800;
+color:#ff9800;
+}
+
+.product-top i{
+font-size:1.2rem;
+color:#ff9800;
+}
+
+.product-image{
+height:280px;
+border-radius:28px;
+overflow:hidden;
+margin-bottom:24px;
+}
+
+.product-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.5s;
+}
+
+.product-card:hover .product-image img{
+transform:scale(1.06);
+}
+
+.product-content h3{
+font-size:1.7rem;
+margin-bottom:10px;
+font-weight:900;
+}
+
+.product-content p{
+font-size:.92rem;
+color:#d7d7d7;
+margin-bottom:16px;
+}
+
+.product-content h2{
 font-size:2rem;
 color:#ff9800;
 margin-bottom:18px;
 }
 
-.step-card h3{
-font-size:1.4rem;
-margin-bottom:12px;
-font-weight:900;
+.tag-delivery{
+display:flex;
+align-items:center;
+gap:10px;
+
+font-size:.86rem;
+color:#d7d7d7;
+
+margin-bottom:24px;
 }
 
-.step-card p{
-font-size:.95rem;
+.btn-product{
+width:100%;
+
+padding:20px;
+
+border-radius:22px;
+
+background:
+linear-gradient(
+135deg,
+#ff9800,
+#ffb300
+);
+
+font-size:1rem;
+font-weight:900;
+color:#fff;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+
+animation:pulseButton 2s infinite;
+}
+
+/* =========================================
+INFO BAR
+========================================= */
+
+.info-bar{
+padding:90px 0;
+
+background:
+linear-gradient(
+180deg,
+#021033,
+#041b5c
+);
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:24px;
+}
+
+.info-item{
+display:flex;
+align-items:flex-start;
+gap:18px;
+
+padding:28px;
+
+border-radius:26px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+}
+
+.info-item i{
+font-size:1.7rem;
+color:#ff9800;
+}
+
+.info-item h4{
+font-size:1.1rem;
+margin-bottom:8px;
+}
+
+.info-item p{
+font-size:.9rem;
 line-height:1.7;
 color:#d7d7d7;
 }
@@ -757,25 +1010,23 @@ animation:pulseButton 2s infinite;
 MODAL
 ========================================= */
 
-.modal{
+.modal-pedido{
 position:fixed;
 inset:0;
 
-background:rgba(0,0,0,.7);
+background:rgba(0,0,0,.75);
 
 display:none;
 align-items:center;
 justify-content:center;
 
 z-index:9999;
+
+padding:20px;
 }
 
-.modal.active{
-display:flex;
-}
-
-.modal-box{
-width:95%;
+.modal-content{
+width:100%;
 max-width:500px;
 
 padding:35px;
@@ -788,14 +1039,31 @@ border:1px solid rgba(255,255,255,.08);
 
 box-shadow:
 0 0 50px rgba(0,0,0,.45);
+
+position:relative;
 }
 
-.modal-box h2{
+.close-modal{
+position:absolute;
+top:18px;
+right:20px;
+
+background:none;
+border:none;
+
+font-size:2rem;
+color:#fff;
+
+cursor:pointer;
+}
+
+.modal-content h2{
 font-size:2rem;
 margin-bottom:25px;
 }
 
-.modal-box input{
+.modal-content input,
+.modal-content textarea{
 width:100%;
 
 padding:18px;
@@ -810,9 +1078,15 @@ border-radius:18px;
 background:#102559;
 
 color:#fff;
+
+resize:none;
 }
 
-.modal-box button{
+.modal-content textarea{
+min-height:120px;
+}
+
+.modal-btn{
 width:100%;
 
 padding:20px;
@@ -840,6 +1114,24 @@ animation:pulseButton 2s infinite;
 /* =========================================
 ANIMATIONS
 ========================================= */
+
+.fade-up{
+animation:fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
 
 @keyframes pulseButton{
 
@@ -931,6 +1223,11 @@ justify-content:center;
 height:560px;
 }
 
+.delivery-card{
+left:50%;
+transform:translateX(-50%);
+}
+
 .navbar{
 display:none;
 }
@@ -969,13 +1266,22 @@ flex-direction:column;
 width:100%;
 }
 
-.slider-wrapper{
-gap:18px;
+.section-header{
+flex-direction:column;
+align-items:flex-start;
 }
 
-.step-card{
-width:260px;
-padding:26px;
+.section-header h2{
+font-size:2.2rem;
+}
+
+.products-grid{
+grid-template-columns:1fr;
+}
+
+.delivery-card{
+width:90%;
+bottom:18px;
 }
 
 .maps iframe{
@@ -1000,6 +1306,30 @@ height:340px;
 
 .hero-image img{
 border-radius:28px;
+}
+
+.hero-badge{
+font-size:.72rem;
+}
+
+.hero-content p{
+font-size:.95rem;
+line-height:1.7;
+}
+
+.product-image{
+height:220px;
+}
+
+.pl-credit{
+font-size:.65rem;
+right:10px;
+}
+
+.floating-whatsapp{
+width:60px;
+height:60px;
+font-size:1.7rem;
 }
 
 }
