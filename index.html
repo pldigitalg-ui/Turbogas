@@ -71,21 +71,13 @@ Entrega premium em BH
 
 <a href="#">Início</a>
 
-<a href="#produtos">
-Produtos
-</a>
+<a href="#produtos">Produtos</a>
 
-<a href="#como-funciona">
-Como funciona
-</a>
+<a href="#como-funciona">Como funciona</a>
 
-<a href="./paginas/sobre.html">
-Sobre nós
-</a>
+<a href="./paginas/sobre.html">Sobre nós</a>
 
-<a href="./paginas/contato.html">
-Contato
-</a>
+<a href="./paginas/contato.html">Contato</a>
 
 </nav>
 
@@ -93,25 +85,15 @@ Contato
 
 <div class="nav-actions">
 
-<a href="#"
-class="login-btn">
-
-<i class="fa-regular fa-user"></i>
-
-Entrar
-
-</a>
-
 <a
-href="https://wa.me/5531997044271?text=Olá,%20vim%20pelo%20site%20da%20Turbo%20Gás."
-target="_blank"
+href="#produtos"
 class="cart-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
 
-Meu pedido
+Carrinho
 
-<span>0</span>
+<span>2</span>
 
 </a>
 
@@ -171,16 +153,15 @@ e receba no conforto da sua casa.
 
 <div class="hero-buttons">
 
-<a
-href="https://wa.me/5531997044271?text=Olá,%20vim%20pelo%20site%20da%20Turbo%20Gás%20e%20quero%20fazer%20um%20pedido."
-target="_blank"
-class="btn-primary hero-main-btn">
+<button
+onclick="abrirModal('Pedido Turbo Gás')"
+class="btn-primary hero-main-btn pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
 
-Pedir agora
+PEDIR AGORA
 
-</a>
+</button>
 
 </div>
 
@@ -304,11 +285,9 @@ SLIDER
 
 <div class="slider-track">
 
-<!-- CARD -->
-
 <div class="mini-gas-card">
 
-<img src="./assets/imagem/hero1.jpg" alt="Botijão Ultragas">
+<img src="./assets/imagem/hero1.jpg" alt="Ultragas">
 
 <div class="mini-info">
 
@@ -322,7 +301,7 @@ SLIDER
 
 <div class="mini-gas-card">
 
-<img src="./assets/imagem/hero2.jpg" alt="Botijão Supergasbras">
+<img src="./assets/imagem/hero2.jpg" alt="Supergasbras">
 
 <div class="mini-info">
 
@@ -336,7 +315,7 @@ SLIDER
 
 <div class="mini-gas-card">
 
-<img src="./assets/imagem/hero3.jpg" alt="Botijão Turbo Gás">
+<img src="./assets/imagem/hero3.jpg" alt="Turbo Gás">
 
 <div class="mini-info">
 
@@ -376,50 +355,6 @@ SLIDER
 
 </div>
 
-<!-- LOOP -->
-
-<div class="mini-gas-card">
-
-<img src="./assets/imagem/hero1.jpg" alt="Botijão Ultragas">
-
-<div class="mini-info">
-
-<h4>Ultragas</h4>
-
-<span>Entrega Turbo</span>
-
-</div>
-
-</div>
-
-<div class="mini-gas-card">
-
-<img src="./assets/imagem/hero2.jpg" alt="Botijão Supergasbras">
-
-<div class="mini-info">
-
-<h4>Supergasbras</h4>
-
-<span>Chega rápido</span>
-
-</div>
-
-</div>
-
-<div class="mini-gas-card">
-
-<img src="./assets/imagem/hero3.jpg" alt="Botijão Turbo Gás">
-
-<div class="mini-info">
-
-<h4>Turbo Gás</h4>
-
-<span>Pagamento PIX</span>
-
-</div>
-
-</div>
-
 </div>
 
 </section>
@@ -446,8 +381,6 @@ Ver todos
 </a>
 
 </div>
-
-<!-- GRID -->
 
 <div class="products-grid">
 
@@ -492,8 +425,8 @@ Entrega em até 60 min
 </div>
 
 <button
-onclick="pedirGas('Ultragas')"
-class="btn-product">
+onclick="abrirModal('Ultragas')"
+class="btn-product pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
 
@@ -546,8 +479,8 @@ Entrega em até 60 min
 </div>
 
 <button
-onclick="pedirGas('Supergasbras')"
-class="btn-product">
+onclick="abrirModal('Supergasbras')"
+class="btn-product pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
 
@@ -581,7 +514,7 @@ id="como-funciona">
 
 <div>
 
-<h4>1. Chame no WhatsApp</h4>
+<h4>1. Clique no pedido</h4>
 
 <p>
 Pedido rápido e simples
@@ -644,20 +577,10 @@ Entrega em até 60 min
 </section>
 
 <!-- =========================================
-MAPS
+MAPA FULL
 ========================================= -->
 
 <section class="maps">
-
-<div class="maps-top">
-
-<h2>Onde estamos</h2>
-
-<p>
-Rua Antônio Mariano de Abreu, 478
-</p>
-
-</div>
 
 <iframe
 src="https://www.google.com/maps?q=Rua%20Antônio%20Mariano%20de%20Abreu,%20478&output=embed"
@@ -683,18 +606,14 @@ FOOTER
 </div>
 
 <p>
-
 © 2026 Turbo Gás • Todos os direitos reservados
-
 </p>
 
 <div class="footer-contact">
 
-<span>
-WhatsApp:
-</span>
-
 <a href="https://wa.me/5531997044271">
+
+<i class="fa-brands fa-whatsapp"></i>
 
 (31) 99704-4271
 
@@ -707,11 +626,11 @@ WhatsApp:
 </footer>
 
 <!-- =========================================
-WHATSAPP FLOAT
+WHATS FLOAT
 ========================================= -->
 
 <a
-href="https://wa.me/5531997044271?text=Olá,%20vim%20pelo%20site%20da%20Turbo%20Gás."
+href="https://wa.me/5531997044271"
 target="_blank"
 class="floating-whatsapp">
 
@@ -723,14 +642,74 @@ class="floating-whatsapp">
 PL DIGITAL
 ========================================= -->
 
-<a
-href="https://pldigital.com.br"
-target="_blank"
-class="pl-credit">
+<div class="pl-credit">
 
-Criado por PLdigital.com.br
+Feito por:
+<a
+href="https://www.pldigitalg.com.br"
+target="_blank">
+
+www.pldigitalG.com.br
 
 </a>
+
+</div>
+
+<!-- =========================================
+MODAL PEDIDO
+========================================= -->
+
+<div class="modal-pedido" id="modalPedido">
+
+<div class="modal-content">
+
+<button
+class="close-modal"
+onclick="fecharModal()">
+
+×
+
+</button>
+
+<h2>Finalizar Pedido</h2>
+
+<form id="pedidoForm">
+
+<input
+type="text"
+id="nome"
+placeholder="Seu nome"
+required>
+
+<input
+type="text"
+id="telefone"
+placeholder="Seu telefone"
+required>
+
+<input
+type="text"
+id="endereco"
+placeholder="Seu endereço completo"
+required>
+
+<textarea
+id="obs"
+placeholder="Observações"></textarea>
+
+<button
+type="submit"
+class="btn-primary modal-btn">
+
+Enviar pedido
+
+</button>
+
+</form>
+
+</div>
+
+</div>
 
 <!-- =========================================
 SCRIPTS
@@ -739,8 +718,6 @@ SCRIPTS
 <script src="./assets/js/app.js"></script>
 <script src="./assets/js/modal.js"></script>
 <script src="./assets/js/whatsapp.js"></script>
-
-<!-- MENU FIX -->
 
 <script>
 
@@ -755,25 +732,58 @@ window.scrollY > 30
 
 });
 
-</script>
+let produtoSelecionado = '';
 
-<!-- PEDIR -->
+function abrirModal(produto){
 
-<script>
+produtoSelecionado = produto;
 
-function pedirGas(produto){
+document
+.getElementById('modalPedido')
+.style.display = 'flex';
 
-const numero = '5531997044271';
+}
+
+function fecharModal(){
+
+document
+.getElementById('modalPedido')
+.style.display = 'none';
+
+}
+
+document
+.getElementById('pedidoForm')
+.addEventListener('submit', function(e){
+
+e.preventDefault();
+
+const nome =
+document.getElementById('nome').value;
+
+const telefone =
+document.getElementById('telefone').value;
+
+const endereco =
+document.getElementById('endereco').value;
+
+const obs =
+document.getElementById('obs').value;
 
 const mensagem =
-`Olá, vim pelo site da Turbo Gás e quero pedir ${produto}.`;
+`Olá Turbo Gás!%0A%0A` +
+`Produto: ${produtoSelecionado}%0A` +
+`Nome: ${nome}%0A` +
+`Telefone: ${telefone}%0A` +
+`Endereço: ${endereco}%0A` +
+`Observações: ${obs}`;
 
 window.open(
-`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`,
+`https://wa.me/5531997044271?text=${mensagem}`,
 '_blank'
 );
 
-}
+});
 
 </script>
 
