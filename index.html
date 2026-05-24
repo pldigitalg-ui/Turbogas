@@ -8,24 +8,102 @@
 
 <title>Turbo Gás | Entrega Rápida</title>
 
-<meta
-name="description"
-content="Turbo Gás - Entrega rápida de gás em Belo Horizonte e região.">
+<meta name="description" content="Turbo Gás - Entrega rápida de gás em Belo Horizonte e região.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <link rel="stylesheet" href="./CSS/style.css">
 
 <style>
+.toast-add{
+position:fixed;
+top:105px;
+left:50%;
+transform:translateX(-50%) translateY(-20px);
+background:#00c853;
+color:#fff;
+padding:14px 22px;
+border-radius:999px;
+font-size:14px;
+font-weight:900;
+z-index:99999;
+box-shadow:0 16px 45px rgba(0,200,83,.45);
+opacity:0;
+pointer-events:none;
+transition:.35s;
+}
+
+.toast-add.show{
+opacity:1;
+transform:translateX(-50%) translateY(0);
+}
+
+.price-list{
+display:flex;
+flex-direction:column;
+gap:6px;
+margin:12px 0 16px;
+font-size:13px;
+line-height:1.45;
+color:#d7d7d7;
+}
+
+.price-list strong{
+color:#ff9800;
+}
+
+.clear-cart-btn{
+width:100%;
+margin:12px 0 18px;
+padding:13px 16px;
+border-radius:16px;
+background:#fff3f3;
+color:#d80000;
+border:1px solid rgba(216,0,0,.25);
+font-weight:900;
+cursor:pointer;
+}
+
+.delivery-fields.hidden{
+display:none;
+}
+
+.cart-total{
+margin-top:18px;
+padding:16px;
+border-radius:18px;
+background:rgba(255,152,0,.12);
+border:1px solid rgba(255,152,0,.25);
+font-weight:900;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:12px;
+}
+
+.payment-options{
+margin-top:18px;
+padding:20px;
+border-radius:20px;
+background:rgba(255,255,255,.05);
+}
+
+.payment-options h3{
+margin-bottom:18px;
+}
+
+.payment-options label{
+display:flex;
+gap:10px;
+margin-bottom:14px;
+line-height:1.6;
+}
+
 .info-bar{
 overflow:hidden;
 padding:34px 0;
@@ -80,93 +158,11 @@ color:#334;
 100%{transform:translateX(-460%);}
 }
 
-.clear-cart-btn{
-width:100%;
-margin:12px 0 18px;
-padding:13px 16px;
-border-radius:16px;
-background:#fff3f3;
-color:#d80000;
-border:1px solid rgba(216,0,0,.25);
-font-weight:900;
-cursor:pointer;
-}
-
-.delivery-fields.hidden{
-display:none;
-}
-
-.toast-add{
-position:fixed;
-top:105px;
-left:50%;
-transform:translateX(-50%) translateY(-20px);
-background:#00c853;
-color:#fff;
-padding:14px 22px;
-border-radius:999px;
-font-size:14px;
-font-weight:900;
-z-index:99999;
-box-shadow:0 16px 45px rgba(0,200,83,.45);
-opacity:0;
-pointer-events:none;
-transition:.35s;
-}
-
-.toast-add.show{
-opacity:1;
-transform:translateX(-50%) translateY(0);
-}
-
-.price-list{
-display:flex;
-flex-direction:column;
-gap:6px;
-margin:12px 0 16px;
-font-size:13px;
-line-height:1.45;
-color:#d7d7d7;
-}
-
-.price-list strong{
-color:#ff9800;
-}
-
-.cart-total{
-margin-top:18px;
-padding:16px;
-border-radius:18px;
-background:rgba(255,152,0,.12);
-border:1px solid rgba(255,152,0,.25);
-font-weight:900;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:12px;
-}
-
-.payment-options{
-margin-top:18px;
-padding:20px;
-border-radius:20px;
-background:rgba(255,255,255,.05);
-}
-
-.payment-options h3{
-margin-bottom:18px;
-}
-
-.payment-options label{
-display:flex;
-gap:10px;
-margin-bottom:14px;
-line-height:1.6;
-}
-
 @media(max-width:768px){
-.hero-grid{
-grid-template-columns:1fr;
+.toast-add{
+top:92px;
+width:88%;
+text-align:center;
 }
 
 .info-grid{
@@ -183,19 +179,6 @@ width:94%;
 max-height:92vh;
 overflow-y:auto;
 border-radius:24px;
-}
-
-.product-card,
-.feature-card,
-.sobre-card,
-.glass-card{
-background:rgba(255,255,255,.16);
-}
-
-.toast-add{
-top:92px;
-width:88%;
-text-align:center;
 }
 
 @keyframes infoSlide{
@@ -274,20 +257,15 @@ Seu gás
 </h1>
 
 <p>
-Entrega rápida, segura e atendimento premium
-todos os dias. Peça seu gás com poucos cliques
-e receba no conforto da sua casa.
+Entrega rápida, segura e atendimento premium todos os dias.
+Peça seu gás com poucos cliques e receba no conforto da sua casa.
 </p>
 
 <div class="hero-buttons">
 
-<button
-onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})"
-class="btn-primary hero-main-btn pulse-btn">
-
+<button onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})" class="btn-primary hero-main-btn pulse-btn">
 <i class="fa-solid fa-cart-shopping"></i>
 PEDIR AGORA
-
 </button>
 
 </div>
@@ -324,9 +302,7 @@ PEDIR AGORA
 
 <div class="hero-image fade-up">
 
-<img
-src="./imagem/hero1.jpg"
-alt="Botijão Turbo Gás">
+<img src="./imagem/hero1.jpg" alt="Botijão Turbo Gás">
 
 <div class="delivery-card glass-card">
 
@@ -438,13 +414,9 @@ alt="Botijão Turbo Gás">
 <button onclick="alterarQtd(this,1)">+</button>
 </div>
 
-<button
-onclick="adicionarCarrinho('Ultragas',105,115,120)"
-class="btn-product pulse-btn">
-
+<button onclick="adicionarCarrinho('Ultragas',105,115,120)" class="btn-product pulse-btn">
 <i class="fa-solid fa-cart-shopping"></i>
 Adicionar
-
 </button>
 
 </div>
@@ -475,13 +447,9 @@ Adicionar
 <button onclick="alterarQtd(this,1)">+</button>
 </div>
 
-<button
-onclick="adicionarCarrinho('Supergasbras',110,125,130)"
-class="btn-product pulse-btn">
-
+<button onclick="adicionarCarrinho('Supergasbras',110,125,130)" class="btn-product pulse-btn">
 <i class="fa-solid fa-cart-shopping"></i>
 Adicionar
-
 </button>
 
 </div>
@@ -505,13 +473,9 @@ Adicionar
 <button onclick="alterarQtd(this,1)">+</button>
 </div>
 
-<button
-onclick="adicionarCarrinho('Água 20L',20,20,20)"
-class="btn-product pulse-btn">
-
+<button onclick="adicionarCarrinho('Água 20L',20,20,20)" class="btn-product pulse-btn">
 <i class="fa-solid fa-cart-shopping"></i>
 Adicionar
-
 </button>
 
 </div>
@@ -577,10 +541,8 @@ Adicionar
 <div class="sobre-card">
 <h3>Nossa história</h3>
 <p>
-A Turbo Gás nasceu no Paulo VI com foco em
-agilidade, atendimento humano e entrega rápida.
-Começamos atendendo apenas vizinhos da região
-e hoje levamos gás e água mineral para diversos
+A Turbo Gás nasceu no Paulo VI com foco em agilidade, atendimento humano e entrega rápida.
+Começamos atendendo apenas vizinhos da região e hoje levamos gás e água mineral para diversos
 bairros próximos com qualidade e segurança.
 </p>
 </div>
@@ -588,18 +550,14 @@ bairros próximos com qualidade e segurança.
 <div class="sobre-card">
 <h3>Missão</h3>
 <p>
-Entregar gás e água com rapidez,
-preço justo e confiança, mantendo
-um atendimento simples e direto.
+Entregar gás e água com rapidez, preço justo e confiança, mantendo um atendimento simples e direto.
 </p>
 </div>
 
 <div class="sobre-card">
 <h3>Atendimento</h3>
 <p>
-Funcionamos todos os dias,
-das 07h às 22h, com pedidos rápidos
-e suporte direto pelo WhatsApp.
+Funcionamos todos os dias, das 07h às 22h, com pedidos rápidos e suporte direto pelo WhatsApp.
 </p>
 </div>
 
@@ -632,38 +590,25 @@ loading="lazy">
 </p>
 
 <div class="footer-contact">
-
 <a href="https://wa.me/5531997044271" target="_blank">
 <i class="fa-brands fa-whatsapp"></i>
 (31) 99704-4271
 </a>
-
 </div>
 
 </div>
 
 </footer>
 
-<a
-href="https://wa.me/5531997044271"
-target="_blank"
-class="floating-whatsapp">
-
+<a href="https://wa.me/5531997044271" target="_blank" class="floating-whatsapp">
 <i class="fa-brands fa-whatsapp"></i>
-
 </a>
 
 <div class="pl-credit">
-
 Feito por:
-<a
-href="https://www.pldigitalg.com.br"
-target="_blank">
-
+<a href="https://www.pldigitalg.com.br" target="_blank">
 www.pldigitalG.com.br
-
 </a>
-
 </div>
 
 <div class="cart-modal" id="cartModal">
@@ -755,11 +700,8 @@ Finalizar pedido no WhatsApp
 
 <script>
 
-const mobileMenu =
-document.getElementById('menu-mobile');
-
-const navbar =
-document.getElementById('navbar');
+const mobileMenu = document.getElementById('menu-mobile');
+const navbar = document.getElementById('navbar');
 
 mobileMenu.addEventListener('click', () => {
 navbar.classList.toggle('active');
@@ -768,35 +710,26 @@ navbar.classList.toggle('active');
 const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
-header.classList.toggle(
-'scrolled',
-window.scrollY > 30
-);
+header.classList.toggle('scrolled', window.scrollY > 30);
 });
 
-const slider =
-document.getElementById('sliderTrack');
+const slider = document.getElementById('sliderTrack');
 
 let scrollAmount = slider.scrollWidth;
 
-setInterval(()=>{
-
+setInterval(() => {
 scrollAmount -= 1;
-
 slider.scrollLeft = scrollAmount;
 
 if(scrollAmount <= 0){
 scrollAmount = slider.scrollWidth;
 }
-
 },20);
 
 let carrinho = [];
 
 function alterarQtd(btn,valor){
-
 const span = btn.parentElement.querySelector('span');
-
 let qtd = parseInt(span.innerText);
 
 qtd += valor;
@@ -806,16 +739,11 @@ qtd = 1;
 }
 
 span.innerText = qtd;
-
 }
 
 function adicionarCarrinho(produto,precoRetirada,precoEntrega,precoCartao){
-
-const card =
-event.target.closest('.product-card');
-
-const qtd =
-parseInt(card.querySelector('.qty-box span').innerText);
+const card = event.target.closest('.product-card');
+const qtd = parseInt(card.querySelector('.qty-box span').innerText);
 
 carrinho.push({
 produto,
@@ -827,29 +755,21 @@ qtd
 
 atualizarCarrinho();
 mostrarToast();
-
 }
 
 function mostrarToast(){
-
-const toast =
-document.getElementById('toastAdd');
+const toast = document.getElementById('toastAdd');
 
 toast.classList.add('show');
 
-setTimeout(()=>{
+setTimeout(() => {
 toast.classList.remove('show');
 },1800);
-
 }
 
 function precoDoItem(item){
-
-const entrega =
-document.querySelector('input[name="entrega"]:checked')?.value || 'entrega';
-
-const pagamento =
-document.querySelector('input[name="pagamento"]:checked')?.value || 'pix';
+const entrega = document.querySelector('input[name="entrega"]:checked')?.value || 'entrega';
+const pagamento = document.querySelector('input[name="pagamento"]:checked')?.value || 'pix';
 
 if(entrega === 'retirada'){
 return item.precoRetirada;
@@ -860,27 +780,19 @@ return item.precoCartao;
 }
 
 return item.precoEntrega;
-
 }
 
 function atualizarCarrinho(){
-
-const cartItems =
-document.getElementById('cart-items');
-
-const cartCount =
-document.getElementById('cart-count');
-
-const cartTotal =
-document.getElementById('cart-total');
+const cartItems = document.getElementById('cart-items');
+const cartCount = document.getElementById('cart-count');
+const cartTotal = document.getElementById('cart-total');
 
 cartItems.innerHTML = '';
 
 let totalItens = 0;
 let totalPedido = 0;
 
-carrinho.forEach((item)=>{
-
+carrinho.forEach((item) => {
 const precoAtual = precoDoItem(item);
 const subtotal = precoAtual * item.qtd;
 
@@ -888,109 +800,69 @@ totalItens += item.qtd;
 totalPedido += subtotal;
 
 cartItems.innerHTML += `
-
 <div class="cart-item">
-
 <div>
-
 <h4>${item.produto}</h4>
-
 <p>${item.qtd}x • R$ ${precoAtual.toFixed(2)}</p>
-
 </div>
-
-<strong>
-R$ ${subtotal.toFixed(2)}
-</strong>
-
+<strong>R$ ${subtotal.toFixed(2)}</strong>
 </div>
-
 `;
-
 });
 
 cartCount.innerText = totalItens;
 cartTotal.innerText = `R$ ${totalPedido.toFixed(2)}`;
-
 }
 
 function esvaziarCarrinho(){
-
 carrinho = [];
-
 atualizarCarrinho();
-
 }
 
 function abrirCarrinho(){
-
-document
-.getElementById('cartModal')
-.style.display = 'flex';
-
+document.getElementById('cartModal').style.display = 'flex';
 document.body.style.overflow = 'hidden';
 
 atualizarCamposEntrega();
 atualizarCarrinho();
-
 }
 
 function fecharCarrinho(){
-
-document
-.getElementById('cartModal')
-.style.display = 'none';
-
+document.getElementById('cartModal').style.display = 'none';
 document.body.style.overflow = 'auto';
-
 }
 
-const radiosEntrega =
-document.querySelectorAll('input[name="entrega"]');
+const radiosEntrega = document.querySelectorAll('input[name="entrega"]');
 
-radiosEntrega.forEach((radio)=>{
-radio.addEventListener('change', ()=>{
+radiosEntrega.forEach((radio) => {
+radio.addEventListener('change', () => {
 atualizarCamposEntrega();
 atualizarCarrinho();
 });
 });
 
-const radiosPagamento =
-document.querySelectorAll('input[name="pagamento"]');
+const radiosPagamento = document.querySelectorAll('input[name="pagamento"]');
 
-radiosPagamento.forEach((radio)=>{
+radiosPagamento.forEach((radio) => {
 radio.addEventListener('change', atualizarCarrinho);
 });
 
 function atualizarCamposEntrega(){
-
-const tipoEntrega =
-document.querySelector('input[name="entrega"]:checked').value;
-
-const deliveryFields =
-document.getElementById('deliveryFields');
-
-const endereco =
-document.getElementById('endereco');
+const tipoEntrega = document.querySelector('input[name="entrega"]:checked').value;
+const deliveryFields = document.getElementById('deliveryFields');
+const endereco = document.getElementById('endereco');
 
 if(tipoEntrega === 'retirada'){
-
 deliveryFields.classList.add('hidden');
 endereco.removeAttribute('required');
 endereco.value = '';
-
 }else{
-
 deliveryFields.classList.remove('hidden');
 endereco.setAttribute('required','required');
-
+}
 }
 
-}
-
-document
-.getElementById('pedidoForm')
-.addEventListener('submit', function(e){
+document.getElementById('pedidoForm').addEventListener('submit', function(e){
 
 e.preventDefault();
 
@@ -999,95 +871,53 @@ alert('Seu carrinho está vazio.');
 return;
 }
 
-const nome =
-document.getElementById('nome').value;
+const nome = document.getElementById('nome').value;
+const telefone = document.getElementById('telefone').value;
+const endereco = document.getElementById('endereco').value;
+const obs = document.getElementById('obs').value;
 
-const telefone =
-document.getElementById('telefone').value;
-
-const endereco =
-document.getElementById('endereco').value;
-
-const obs =
-document.getElementById('obs').value;
-
-const entrega =
-document.querySelector(
-'input[name="entrega"]:checked'
-).value;
-
-const pagamento =
-document.querySelector(
-'input[name="pagamento"]:checked'
-).value;
+const entrega = document.querySelector('input[name="entrega"]:checked').value;
+const pagamento = document.querySelector('input[name="pagamento"]:checked').value;
 
 let totalPedido = 0;
 
-let mensagem =
-`Olá Turbo Gás!%0A%0A`;
+let mensagem = `Olá Turbo Gás!%0A%0A`;
 
-carrinho.forEach((item)=>{
-
+carrinho.forEach((item) => {
 const precoAtual = precoDoItem(item);
 const subtotal = precoAtual * item.qtd;
 totalPedido += subtotal;
 
-mensagem +=
-`${item.qtd}x ${item.produto} - R$ ${precoAtual.toFixed(2)} cada - Total R$ ${subtotal.toFixed(2)}%0A`;
-
+mensagem += `${item.qtd}x ${item.produto} - R$ ${precoAtual.toFixed(2)} cada - Total R$ ${subtotal.toFixed(2)}%0A`;
 });
 
-mensagem +=
-`%0ATotal do pedido: R$ ${totalPedido.toFixed(2)}%0A`;
-
-mensagem +=
-`Tipo de pedido: ${entrega === 'retirada' ? 'Retirada na porta / Portaria' : 'Entrega a domicílio'}%0A`;
-
-mensagem +=
-`Pagamento: ${pagamento === 'pix' ? 'PIX' : pagamento === 'dinheiro' ? 'Dinheiro' : 'Cartão'}%0A`;
-
-mensagem +=
-`Nome: ${nome}%0A`;
-
-mensagem +=
-`Telefone: ${telefone}%0A`;
+mensagem += `%0ATotal do pedido: R$ ${totalPedido.toFixed(2)}%0A`;
+mensagem += `Tipo de pedido: ${entrega === 'retirada' ? 'Retirada na porta / Portaria' : 'Entrega a domicílio'}%0A`;
+mensagem += `Pagamento: ${pagamento === 'pix' ? 'PIX' : pagamento === 'dinheiro' ? 'Dinheiro' : 'Cartão'}%0A`;
+mensagem += `Nome: ${nome}%0A`;
+mensagem += `Telefone: ${telefone}%0A`;
 
 if(entrega === 'entrega'){
-mensagem +=
-`Endereço: ${endereco}%0A`;
+mensagem += `Endereço: ${endereco}%0A`;
 }
 
-mensagem +=
-`Observações: ${obs}`;
+mensagem += `Observações: ${obs}`;
 
-window.open(
-`https://wa.me/5531997044271?text=${mensagem}`,
-'_blank'
-);
+window.open(`https://wa.me/5531997044271?text=${mensagem}`,'_blank');
 
 });
 
-const fadeElements =
-document.querySelectorAll('.fade-up');
+const fadeElements = document.querySelectorAll('.fade-up');
 
-const observer =
-new IntersectionObserver((entries)=>{
-
-entries.forEach((entry)=>{
-
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
 if(entry.isIntersecting){
-
 entry.target.classList.add('show');
-
 }
-
 });
+},{threshold:0.2});
 
-},{
-threshold:0.2
-});
-
-fadeElements.forEach((el)=>{
+fadeElements.forEach((el) => {
 observer.observe(el);
 });
 
