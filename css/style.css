@@ -2063,3 +2063,189 @@ COLE NO FINAL DO CSS
     font-size:1.55rem !important;
   }
 }
+
+/* =====================================================
+CORREÇÃO FINAL CARRINHO + HERO MOBILE TOPO
+COLE NO FINAL DO CSS
+===================================================== */
+
+/* HERO MOBILE: texto no topo */
+@media(max-width:768px){
+  .hero{
+    height:100svh !important;
+    min-height:620px !important;
+    padding:92px 0 24px !important;
+    align-items:flex-start !important;
+  }
+
+  .hero-grid{
+    height:auto !important;
+    min-height:auto !important;
+    align-items:flex-start !important;
+    padding-top:18px !important;
+  }
+
+  .hero-content{
+    padding:0 !important;
+    margin:0 !important;
+    transform:none !important;
+    justify-content:flex-start !important;
+  }
+}
+
+/* MODAL FUNDO */
+.cart-modal{
+  padding:18px !important;
+  background:rgba(1,8,28,.78) !important;
+  backdrop-filter:blur(10px) !important;
+}
+
+/* CARRINHO PREMIUM */
+.cart-content{
+  width:100% !important;
+  max-width:520px !important;
+  max-height:88vh !important;
+  overflow-y:auto !important;
+  padding:26px !important;
+  border-radius:28px !important;
+  background:linear-gradient(180deg,#ffffff 0%,#eef4ff 100%) !important;
+  color:#061742 !important;
+  box-shadow:0 35px 90px rgba(0,0,0,.42) !important;
+}
+
+/* HEADER DO CARRINHO */
+.cart-header{
+  margin-bottom:18px !important;
+}
+
+.cart-header h2{
+  font-size:1.8rem !important;
+}
+
+.cart-header button{
+  width:38px !important;
+  height:38px !important;
+  border-radius:50% !important;
+  background:#eef3ff !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  font-size:1.4rem !important;
+}
+
+/* BOTÃO ESVAZIAR */
+.clear-cart-btn{
+  background:#fff4f4 !important;
+  border:1px solid rgba(216,0,0,.18) !important;
+  color:#d80000 !important;
+  border-radius:16px !important;
+  height:44px !important;
+}
+
+/* CAIXAS INTERNAS */
+.delivery-options{
+  background:#f7faff !important;
+  border:1px solid rgba(3,27,78,.08) !important;
+  border-radius:20px !important;
+  padding:18px !important;
+  margin-top:18px !important;
+}
+
+.delivery-options h3{
+  font-size:1rem !important;
+  margin-bottom:14px !important;
+}
+
+/* LABELS DO RADIO ARRUMADOS */
+.delivery-options label{
+  display:grid !important;
+  grid-template-columns:22px 1fr !important;
+  align-items:center !important;
+  gap:10px !important;
+  margin-bottom:12px !important;
+  font-size:.9rem !important;
+  line-height:1.35 !important;
+}
+
+.delivery-options input[type="radio"]{
+  width:18px !important;
+  height:18px !important;
+  margin:0 !important;
+  accent-color:#ff9800 !important;
+}
+
+/* CAMPOS */
+.cart-content input[type="text"],
+.cart-content input[type="tel"],
+.cart-content textarea{
+  background:#f7faff !important;
+  border:1px solid rgba(3,27,78,.08) !important;
+  border-radius:16px !important;
+  padding:15px 16px !important;
+  font-size:.9rem !important;
+  margin-bottom:12px !important;
+}
+
+/* BOTÃO FINALIZAR */
+.modal-btn{
+  border-radius:18px !important;
+  padding:17px !important;
+  font-size:.95rem !important;
+}
+
+/* MOBILE DO CARRINHO */
+@media(max-width:768px){
+  .cart-modal{
+    align-items:flex-start !important;
+    justify-content:center !important;
+    padding:12px !important;
+    padding-top:82px !important;
+  }
+
+  .cart-content{
+    width:100% !important;
+    max-width:100% !important;
+    max-height:calc(100svh - 100px) !important;
+    padding:20px !important;
+    border-radius:24px !important;
+  }
+
+  .cart-header h2{
+    font-size:1.45rem !important;
+  }
+
+  .delivery-options{
+    padding:15px !important;
+  }
+
+  .delivery-options label{
+    grid-template-columns:20px 1fr !important;
+    font-size:.82rem !important;
+  }
+
+  .delivery-info{
+    font-size:.76rem !important;
+    line-height:1.45 !important;
+  }
+}
+
+/* CELULAR MUITO PEQUENO */
+@media(max-width:390px){
+  .cart-modal{
+    padding:8px !important;
+    padding-top:74px !important;
+  }
+
+  .cart-content{
+    padding:16px !important;
+    border-radius:20px !important;
+  }
+
+  .cart-header h2{
+    font-size:1.3rem !important;
+  }
+
+  .delivery-options label{
+    font-size:.78rem !important;
+  }
+}
