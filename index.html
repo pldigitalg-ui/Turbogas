@@ -82,6 +82,105 @@
   display:none !important;
 }
 
+/* SOBRE PREMIUM */
+.sobre{
+  padding:100px 0 80px;
+  background:
+  radial-gradient(circle at top left, rgba(255,152,0,.12), transparent 34%),
+  linear-gradient(180deg,#020b26 0%,#04164a 100%);
+}
+
+.sobre-title{
+  text-align:center;
+  max-width:860px;
+  margin:0 auto 45px;
+}
+
+.sobre-title span{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:999px;
+  background:rgba(255,152,0,.12);
+  border:1px solid rgba(255,152,0,.25);
+  color:#ff9800;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.16em;
+  margin-bottom:18px;
+}
+
+.sobre-title h2{
+  font-size:clamp(32px,5vw,56px);
+  line-height:1.05;
+  font-weight:900;
+  color:#fff;
+  margin-bottom:22px;
+}
+
+.sobre-title p{
+  font-size:17px;
+  line-height:1.9;
+  color:#d7d7d7;
+  max-width:760px;
+  margin:auto;
+}
+
+.sobre-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+  margin-top:20px;
+}
+
+.sobre-card{
+  position:relative;
+  overflow:hidden;
+  padding:38px 30px;
+  border-radius:30px;
+  background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 25px 60px rgba(0,0,0,.32);
+  backdrop-filter:blur(10px);
+  transition:.35s;
+}
+
+.sobre-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(255,152,0,.35);
+}
+
+.sobre-card.destaque{
+  border-color:rgba(255,152,0,.25);
+  box-shadow:0 25px 70px rgba(255,152,0,.14);
+}
+
+.sobre-icon{
+  width:68px;
+  height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:22px;
+  margin-bottom:24px;
+  background:linear-gradient(135deg,#ff9800,#ffb347);
+  color:#04164a;
+  font-size:28px;
+  box-shadow:0 0 30px rgba(255,152,0,.35);
+}
+
+.sobre-card h3{
+  font-size:25px;
+  font-weight:800;
+  color:#fff;
+  margin-bottom:16px;
+}
+
+.sobre-card p{
+  font-size:15px;
+  line-height:1.9;
+  color:#d7d7d7;
+}
+
 @media(max-width:768px){
   .hero-slide{
     background-position:center top;
@@ -93,6 +192,22 @@
 
   .hero-content{
     padding-top:90px;
+  }
+
+  .sobre{
+    padding:70px 0 50px;
+  }
+
+  .sobre-grid{
+    grid-template-columns:1fr;
+  }
+
+  .sobre-title h2{
+    font-size:36px;
+  }
+
+  .sobre-card{
+    padding:32px 24px;
   }
 }
 </style>
@@ -369,30 +484,68 @@
 </section>
 
 <section class="sobre" id="sobre">
-  <div class="container sobre-grid">
+  <div class="container">
 
-    <div class="sobre-card">
-      <h3>Atendimento rápido</h3>
+    <div class="section-header sobre-title">
+      <span>TURBO GÁS NO PAULO VI</span>
+
+      <h2>
+        Gás e água para deixar sua rotina
+        mais rápida dentro da cozinha.
+      </h2>
+
       <p>
-        Pedido feito direto pelo WhatsApp, sem enrolação.
-        Você escolhe o produto, forma de entrega e pagamento.
+        A Turbo Gás nasceu no bairro Paulo VI com um objetivo simples:
+        agilizar a vida de quem precisa cozinhar, trabalhar,
+        cuidar da casa e não pode perder tempo esperando atendimento demorado.
       </p>
     </div>
 
-    <div class="sobre-card">
-      <h3>Retirada ou entrega</h3>
-      <p>
-        Se for retirada na portaria, pedimos apenas nome e telefone.
-        Para entrega, o endereço aparece automaticamente no carrinho.
-      </p>
-    </div>
+    <div class="sobre-grid">
 
-    <div class="sobre-card">
-      <h3>Preço claro</h3>
-      <p>
-        Valores atualizados para Ultragas, Supergasbras e água,
-        com diferença para pagamento em cartão quando necessário.
-      </p>
+      <div class="sobre-card">
+        <div class="sobre-icon">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+        <h3>Pedido sem enrolação</h3>
+
+        <p>
+          Você escolhe o gás ou a água, adiciona no carrinho
+          e finaliza direto pelo WhatsApp,
+          de um jeito simples, rápido e sem burocracia.
+        </p>
+      </div>
+
+      <div class="sobre-card destaque">
+        <div class="sobre-icon">
+          <i class="fa-solid fa-kitchen-set"></i>
+        </div>
+
+        <h3>Pensado para sua cozinha</h3>
+
+        <p>
+          Seja para preparar o almoço da família,
+          manter o restaurante funcionando
+          ou não ficar na mão no meio do preparo,
+          a Turbo Gás está pronta para atender.
+        </p>
+      </div>
+
+      <div class="sobre-card">
+        <div class="sobre-icon">
+          <i class="fa-solid fa-truck-fast"></i>
+        </div>
+
+        <h3>Retirada ou entrega</h3>
+
+        <p>
+          Retire na portaria ou peça entrega no endereço.
+          Tudo com preço claro, atendimento direto
+          e finalização rápida no WhatsApp.
+        </p>
+      </div>
+
     </div>
 
   </div>
