@@ -16,7 +16,7 @@ content="Turbo Gás - Entrega rápida de gás em Belo Horizonte e região.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet">
 
 <link
@@ -24,6 +24,165 @@ rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <link rel="stylesheet" href="./css/style.css">
+
+<style>
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+margin-top:30px;
+}
+
+.info-item{
+position:relative;
+overflow:hidden;
+padding:24px;
+border-radius:24px;
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.08);
+display:flex;
+align-items:center;
+gap:18px;
+min-height:130px;
+transition:.4s;
+cursor:pointer;
+}
+
+.info-item:hover{
+transform:translateY(-6px);
+border-color:rgba(255,153,0,.5);
+}
+
+.info-item::before{
+content:'';
+position:absolute;
+top:0;
+left:-120%;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.18),
+transparent
+);
+animation:slideCard 4s linear infinite;
+}
+
+@keyframes slideCard{
+100%{
+left:120%;
+}
+}
+
+.info-item img{
+width:72px;
+height:72px;
+object-fit:cover;
+border-radius:18px;
+}
+
+.info-item i{
+font-size:26px;
+color:#ff9900;
+min-width:26px;
+}
+
+.info-item h4{
+font-size:16px;
+margin-bottom:5px;
+}
+
+.info-item p{
+font-size:13px;
+opacity:.8;
+}
+
+.cart-actions{
+display:flex;
+gap:12px;
+margin-top:18px;
+}
+
+.btn-clear{
+width:100%;
+padding:14px;
+border:none;
+border-radius:16px;
+background:#2b2b2b;
+color:#fff;
+font-weight:700;
+cursor:pointer;
+}
+
+.hidden-field{
+display:none;
+}
+
+@media(max-width:990px){
+
+.hero-grid{
+grid-template-columns:1fr !important;
+}
+
+.info-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.products-grid{
+grid-template-columns:1fr !important;
+}
+
+.hero-image img{
+max-width:100%;
+}
+
+}
+
+@media(max-width:640px){
+
+.info-grid{
+grid-template-columns:1fr;
+}
+
+.info-item{
+padding:18px;
+min-height:auto;
+}
+
+.info-item img{
+width:60px;
+height:60px;
+}
+
+.cart-content{
+width:100% !important;
+height:100vh;
+border-radius:0 !important;
+overflow-y:auto;
+padding-bottom:120px;
+}
+
+.hero{
+padding-top:120px;
+}
+
+.product-card{
+width:100%;
+}
+
+.btn-product,
+.hero-main-btn,
+.modal-btn{
+min-height:54px;
+font-size:15px;
+}
+
+}
+
+</style>
 
 </head>
 
@@ -124,93 +283,13 @@ PEDIR AGORA
 
 </div>
 
-<div class="hero-features">
-
-<div class="feature-card glass-card">
-
-<i class="fa-solid fa-truck-fast"></i>
-
-<div>
-
-<h4>Entrega rápida</h4>
-
-<p>Até 60 minutos</p>
-
-</div>
-
-</div>
-
-<div class="feature-card glass-card">
-
-<i class="fa-solid fa-shield-halved"></i>
-
-<div>
-
-<h4>Compra segura</h4>
-
-<p>Pagamento protegido</p>
-
-</div>
-
-</div>
-
-<div class="feature-card glass-card">
-
-<i class="fa-solid fa-award"></i>
-
-<div>
-
-<h4>Qualidade garantida</h4>
-
-<p>Revenda autorizada</p>
-
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 <div class="hero-image fade-up">
 
 <img
-src="./imagem/hero1.png"
+src="./imagem/hero1.jpg"
 alt="Botijão Turbo Gás">
-
-<div class="delivery-card glass-card">
-
-<div class="delivery-item">
-
-<i class="fa-solid fa-location-dot"></i>
-
-<div>
-
-<h4>Entregamos em:</h4>
-
-<p>Belo Horizonte e região</p>
-
-</div>
-
-</div>
-
-<div class="divider"></div>
-
-<div class="delivery-item">
-
-<i class="fa-regular fa-clock"></i>
-
-<div>
-
-<h4>Horário:</h4>
-
-<p>07h às 22h</p>
-
-</div>
-
-</div>
-
-</div>
 
 </div>
 
@@ -224,42 +303,26 @@ alt="Botijão Turbo Gás">
 
 <div class="mini-gas-card">
 <img src="./imagem/hero1.jpg">
-<div class="mini-info">
-<h4>Ultragas</h4>
-<span>Entrega Turbo</span>
-</div>
-</div>
-
-<div class="mini-gas-card">
-<img src="./imagem/hero2.jpg">
-<div class="mini-info">
-<h4>Supergasbras</h4>
-<span>Chega rápido</span>
-</div>
 </div>
 
 <div class="mini-gas-card">
 <img src="./imagem/hero3.png">
-<div class="mini-info">
-<h4>Água 20L</h4>
-<span>Gelada e lacrada</span>
-</div>
 </div>
 
 <div class="mini-gas-card">
 <img src="./imagem/hero1.jpg">
-<div class="mini-info">
-<h4>Entrega</h4>
-<span>Até 60 minutos</span>
-</div>
 </div>
 
 <div class="mini-gas-card">
-<img src="./imagem/hero2.jpg">
-<div class="mini-info">
-<h4>Pagamento PIX</h4>
-<span>Rápido e seguro</span>
+<img src="./imagem/hero3.png">
 </div>
+
+<div class="mini-gas-card">
+<img src="./imagem/hero1.jpg">
+</div>
+
+<div class="mini-gas-card">
+<img src="./imagem/hero3.png">
 </div>
 
 </div>
@@ -304,44 +367,6 @@ alt="Botijão Turbo Gás">
 
 <button
 onclick="adicionarCarrinho('Ultragas',115)"
-class="btn-product pulse-btn">
-
-<i class="fa-solid fa-cart-shopping"></i>
-
-Adicionar
-
-</button>
-
-</div>
-
-</div>
-
-<div class="product-card fade-up app-card">
-
-<div class="product-image">
-<img src="./imagem/hero2.png">
-</div>
-
-<div class="product-content">
-
-<h3>Supergasbras</h3>
-
-<p>Entrega rápida • Gás premium</p>
-
-<h2>R$ 125,00</h2>
-
-<div class="qty-box">
-
-<button onclick="alterarQtd(this,-1)">-</button>
-
-<span>1</span>
-
-<button onclick="alterarQtd(this,1)">+</button>
-
-</div>
-
-<button
-onclick="adicionarCarrinho('Supergasbras',125)"
 class="btn-product pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
@@ -402,9 +427,9 @@ Adicionar
 
 <div class="container info-grid">
 
-<div class="info-item">
+<button class="info-item">
 
-<i class="fa-solid fa-cart-shopping"></i>
+<img src="./imagem/hero1.jpg">
 
 <div>
 
@@ -414,11 +439,11 @@ Adicionar
 
 </div>
 
-</div>
+</button>
 
-<div class="info-item">
+<button class="info-item">
 
-<i class="fa-solid fa-location-dot"></i>
+<img src="./imagem/hero3.png">
 
 <div>
 
@@ -428,11 +453,11 @@ Adicionar
 
 </div>
 
-</div>
+</button>
 
-<div class="info-item">
+<button class="info-item">
 
-<i class="fa-solid fa-credit-card"></i>
+<img src="./imagem/hero1.jpg">
 
 <div>
 
@@ -442,11 +467,11 @@ Adicionar
 
 </div>
 
-</div>
+</button>
 
-<div class="info-item">
+<button class="info-item">
 
-<i class="fa-solid fa-truck-fast"></i>
+<img src="./imagem/hero3.png">
 
 <div>
 
@@ -456,7 +481,7 @@ Adicionar
 
 </div>
 
-</div>
+</button>
 
 </div>
 
@@ -480,9 +505,6 @@ Adicionar
 
 A Turbo Gás nasceu no Paulo VI com foco em
 agilidade, atendimento humano e entrega rápida.
-Começamos atendendo apenas vizinhos da região
-e hoje levamos gás e água mineral para diversos
-bairros próximos com qualidade e segurança.
 
 </p>
 
@@ -495,8 +517,7 @@ bairros próximos com qualidade e segurança.
 <p>
 
 Entregar gás e água com rapidez,
-preço justo e confiança, mantendo
-um atendimento simples e direto.
+preço justo e confiança.
 
 </p>
 
@@ -509,8 +530,7 @@ um atendimento simples e direto.
 <p>
 
 Funcionamos todos os dias,
-das 07h às 22h, com pedidos rápidos
-e suporte direto pelo WhatsApp.
+das 07h às 22h.
 
 </p>
 
@@ -519,15 +539,6 @@ e suporte direto pelo WhatsApp.
 </div>
 
 </div>
-
-</section>
-
-<section class="maps">
-
-<iframe
-src="https://www.google.com/maps?q=Rua%20Joao%20Lemos%20Belo%20Horizonte%20MG&output=embed"
-loading="lazy">
-</iframe>
 
 </section>
 
@@ -547,45 +558,9 @@ loading="lazy">
 © 2026 Turbo Gás • Todos os direitos reservados
 </p>
 
-<div class="footer-contact">
-
-<a href="https://wa.me/5531997044271">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-(31) 99704-4271
-
-</a>
-
-</div>
-
 </div>
 
 </footer>
-
-<a
-href="https://wa.me/5531997044271"
-target="_blank"
-class="floating-whatsapp">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
-<div class="pl-credit">
-
-Feito por:
-<a
-href="https://www.pldigitalg.com.br"
-target="_blank">
-
-www.pldigitalG.com.br
-
-</a>
-
-</div>
-
-<!-- CARRINHO -->
 
 <div class="cart-modal" id="cartModal">
 
@@ -601,27 +576,31 @@ www.pldigitalG.com.br
 
 <div id="cart-items"></div>
 
+<div class="cart-actions">
+
+<button
+class="btn-clear"
+onclick="esvaziarCarrinho()">
+
+Esvaziar carrinho
+
+</button>
+
+</div>
+
 <div class="delivery-options">
 
 <h3>Entrega</h3>
 
 <label>
 <input type="radio" name="entrega" value="retirada">
-Retirada na porta - R$ 104,00
+Retirada na porta
 </label>
 
 <label>
 <input type="radio" name="entrega" value="entrega" checked>
-Entrega até 6KM do Paulo VI
+Entrega em domicílio
 </label>
-
-<p class="delivery-info">
-
-Entrega disponível para bairros próximos da:
-Rua João Lemos - Belo Horizonte MG
-CEP: 31995-150
-
-</p>
 
 </div>
 
@@ -631,9 +610,13 @@ CEP: 31995-150
 
 <input type="text" id="telefone" placeholder="Seu telefone" required>
 
-<input type="text" id="endereco" placeholder="Seu endereço completo" required>
+<div id="camposEndereco">
+
+<input type="text" id="endereco" placeholder="Seu endereço completo">
 
 <textarea id="obs" placeholder="Observações"></textarea>
+
+</div>
 
 <button type="submit" class="btn-primary modal-btn">
 
@@ -674,23 +657,22 @@ window.scrollY > 30
 
 });
 
-/* SLIDER */
+/* SLIDER DIREITA PARA ESQUERDA */
 
-const slider =
+const sliderTrack =
 document.getElementById('sliderTrack');
 
-let scrollAmount = 0;
+let position = 0;
 
 setInterval(()=>{
 
-scrollAmount += 1;
+position += 1;
 
-slider.scrollLeft = scrollAmount;
+sliderTrack.style.transform =
+`translateX(-${position}px)`;
 
-if(scrollAmount >= slider.scrollWidth / 2){
-
-scrollAmount = 0;
-
+if(position > sliderTrack.scrollWidth / 2){
+position = 0;
 }
 
 },20);
@@ -775,6 +757,14 @@ cartCount.innerText = totalItens;
 
 }
 
+function esvaziarCarrinho(){
+
+carrinho = [];
+
+atualizarCarrinho();
+
+}
+
 function abrirCarrinho(){
 
 document
@@ -794,6 +784,39 @@ document
 document.body.style.overflow = 'auto';
 
 }
+
+/* ENTREGA */
+
+const radiosEntrega =
+document.querySelectorAll('input[name="entrega"]');
+
+const camposEndereco =
+document.getElementById('camposEndereco');
+
+const enderecoInput =
+document.getElementById('endereco');
+
+radiosEntrega.forEach((radio)=>{
+
+radio.addEventListener('change',()=>{
+
+if(radio.checked && radio.value === 'retirada'){
+
+camposEndereco.classList.add('hidden-field');
+
+enderecoInput.removeAttribute('required');
+
+}else{
+
+camposEndereco.classList.remove('hidden-field');
+
+enderecoInput.setAttribute('required',true);
+
+}
+
+});
+
+});
 
 /* PEDIDO */
 
@@ -839,11 +862,15 @@ mensagem +=
 mensagem +=
 `Telefone: ${telefone}%0A`;
 
+if(entrega === 'entrega'){
+
 mensagem +=
 `Endereço: ${endereco}%0A`;
 
 mensagem +=
-`Observações: ${obs}`;
+`Observações: ${obs}%0A`;
+
+}
 
 window.open(
 `https://wa.me/5531997044271?text=${mensagem}`,
