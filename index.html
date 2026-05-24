@@ -16,7 +16,7 @@ content="Turbo Gás - Entrega rápida de gás em Belo Horizonte e região.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
 rel="stylesheet">
 
 <link
@@ -26,162 +26,109 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <link rel="stylesheet" href="./css/style.css">
 
 <style>
+.info-bar{
+overflow:hidden;
+padding:34px 0;
+}
 
 .info-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-margin-top:30px;
+display:flex;
+gap:16px;
+overflow:hidden;
 }
 
 .info-item{
-position:relative;
-overflow:hidden;
-padding:24px;
-border-radius:24px;
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,.08);
+min-width:260px;
+background:linear-gradient(135deg,#ffffff,#fff3df);
+color:#031b4e;
+border:1px solid rgba(255,152,0,.35);
+box-shadow:0 12px 35px rgba(0,0,0,.22);
+border-radius:22px;
+padding:18px;
 display:flex;
 align-items:center;
-gap:18px;
-min-height:130px;
-transition:.4s;
-cursor:pointer;
-}
-
-.info-item:hover{
-transform:translateY(-6px);
-border-color:rgba(255,153,0,.5);
-}
-
-.info-item::before{
-content:'';
-position:absolute;
-top:0;
-left:-120%;
-width:100%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.18),
-transparent
-);
-animation:slideCard 4s linear infinite;
-}
-
-@keyframes slideCard{
-100%{
-left:120%;
-}
-}
-
-.info-item img{
-width:72px;
-height:72px;
-object-fit:cover;
-border-radius:18px;
+gap:14px;
+animation:infoSlide 18s linear infinite;
 }
 
 .info-item i{
-font-size:26px;
-color:#ff9900;
-min-width:26px;
+width:46px;
+height:46px;
+border-radius:16px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#ff9800;
+color:#fff;
+font-size:20px;
 }
 
 .info-item h4{
-font-size:16px;
-margin-bottom:5px;
+font-size:15px;
+font-weight:900;
+margin-bottom:4px;
 }
 
 .info-item p{
 font-size:13px;
-opacity:.8;
+font-weight:600;
+color:#334;
 }
 
-.cart-actions{
-display:flex;
-gap:12px;
-margin-top:18px;
+@keyframes infoSlide{
+0%{transform:translateX(100%);}
+100%{transform:translateX(-460%);}
 }
 
-.btn-clear{
+.clear-cart-btn{
 width:100%;
-padding:14px;
-border:none;
+margin:12px 0 18px;
+padding:13px 16px;
 border-radius:16px;
-background:#2b2b2b;
-color:#fff;
-font-weight:700;
+background:#fff3f3;
+color:#d80000;
+border:1px solid rgba(216,0,0,.25);
+font-weight:900;
 cursor:pointer;
 }
 
-.hidden-field{
+.delivery-fields.hidden{
 display:none;
 }
 
-@media(max-width:990px){
-
+@media(max-width:768px){
 .hero-grid{
-grid-template-columns:1fr !important;
-}
-
-.info-grid{
-grid-template-columns:1fr 1fr;
-}
-
-.products-grid{
-grid-template-columns:1fr !important;
-}
-
-.hero-image img{
-max-width:100%;
-}
-
-}
-
-@media(max-width:640px){
-
-.info-grid{
 grid-template-columns:1fr;
 }
 
-.info-item{
-padding:18px;
-min-height:auto;
+.info-grid{
+gap:12px;
 }
 
-.info-item img{
-width:60px;
-height:60px;
+.info-item{
+min-width:240px;
+padding:15px;
 }
 
 .cart-content{
-width:100% !important;
-height:100vh;
-border-radius:0 !important;
+width:94%;
+max-height:92vh;
 overflow-y:auto;
-padding-bottom:120px;
+border-radius:24px;
 }
 
-.hero{
-padding-top:120px;
+.product-card,
+.feature-card,
+.sobre-card,
+.glass-card{
+background:rgba(255,255,255,.16);
 }
 
-.product-card{
-width:100%;
+@keyframes infoSlide{
+0%{transform:translateX(100%);}
+100%{transform:translateX(-520%);}
 }
-
-.btn-product,
-.hero-main-btn,
-.modal-btn{
-min-height:54px;
-font-size:15px;
 }
-
-}
-
 </style>
 
 </head>
@@ -199,35 +146,26 @@ font-size:15px;
 </div>
 
 <div class="logo-text">
-
 <h2>TURBO GÁS</h2>
-
 <p>Entrega premium em BH</p>
-
 </div>
 
 </a>
 
 <nav class="navbar" id="navbar">
-
 <a href="#inicio">Início</a>
 <a href="#produtos">Produtos</a>
 <a href="#como-funciona">Como funciona</a>
 <a href="#sobre">Sobre nós</a>
 <a href="#contato">Contato</a>
-
 </nav>
 
 <div class="nav-actions">
 
 <button class="cart-btn" onclick="abrirCarrinho()">
-
 <i class="fa-solid fa-cart-shopping"></i>
-
 Carrinho
-
 <span id="cart-count">0</span>
-
 </button>
 
 <div class="menu-mobile" id="menu-mobile">
@@ -247,26 +185,19 @@ Carrinho
 <div class="hero-content fade-up">
 
 <div class="hero-badge">
-
 <i class="fa-solid fa-bolt"></i>
-
 Entrega rápida em Belo Horizonte
-
 </div>
 
 <h1>
-
 Seu gás
 <span>chega rápido.</span>
-
 </h1>
 
 <p>
-
 Entrega rápida, segura e atendimento premium
 todos os dias. Peça seu gás com poucos cliques
 e receba no conforto da sua casa.
-
 </p>
 
 <div class="hero-buttons">
@@ -276,10 +207,37 @@ onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})
 class="btn-primary hero-main-btn pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
-
 PEDIR AGORA
 
 </button>
+
+</div>
+
+<div class="hero-features">
+
+<div class="feature-card glass-card">
+<i class="fa-solid fa-truck-fast"></i>
+<div>
+<h4>Entrega rápida</h4>
+<p>Até 60 minutos</p>
+</div>
+</div>
+
+<div class="feature-card glass-card">
+<i class="fa-solid fa-shield-halved"></i>
+<div>
+<h4>Compra segura</h4>
+<p>Pagamento protegido</p>
+</div>
+</div>
+
+<div class="feature-card glass-card">
+<i class="fa-solid fa-award"></i>
+<div>
+<h4>Qualidade garantida</h4>
+<p>Revenda autorizada</p>
+</div>
+</div>
 
 </div>
 
@@ -288,8 +246,30 @@ PEDIR AGORA
 <div class="hero-image fade-up">
 
 <img
-src="./imagem/hero1.jpg"
+src="./imagem/hero1.png"
 alt="Botijão Turbo Gás">
+
+<div class="delivery-card glass-card">
+
+<div class="delivery-item">
+<i class="fa-solid fa-location-dot"></i>
+<div>
+<h4>Entregamos em:</h4>
+<p>Belo Horizonte e região</p>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="delivery-item">
+<i class="fa-regular fa-clock"></i>
+<div>
+<h4>Horário:</h4>
+<p>07h às 22h</p>
+</div>
+</div>
+
+</div>
 
 </div>
 
@@ -302,27 +282,43 @@ alt="Botijão Turbo Gás">
 <div class="slider-track" id="sliderTrack">
 
 <div class="mini-gas-card">
-<img src="./imagem/hero1.jpg">
+<img src="./imagem/hero1.jpg" alt="Ultragas">
+<div class="mini-info">
+<h4>Ultragas</h4>
+<span>Entrega Turbo</span>
+</div>
 </div>
 
 <div class="mini-gas-card">
-<img src="./imagem/hero3.png">
+<img src="./imagem/hero3.png" alt="Supergasbras">
+<div class="mini-info">
+<h4>Supergasbras</h4>
+<span>Chega rápido</span>
+</div>
 </div>
 
 <div class="mini-gas-card">
-<img src="./imagem/hero1.jpg">
+<img src="./imagem/hero3.png" alt="Água 20L">
+<div class="mini-info">
+<h4>Água 20L</h4>
+<span>Gelada e lacrada</span>
+</div>
 </div>
 
 <div class="mini-gas-card">
-<img src="./imagem/hero3.png">
+<img src="./imagem/hero1.jpg" alt="Entrega">
+<div class="mini-info">
+<h4>Entrega</h4>
+<span>Até 60 minutos</span>
+</div>
 </div>
 
 <div class="mini-gas-card">
-<img src="./imagem/hero1.jpg">
+<img src="./imagem/hero1.jpg" alt="Pagamento PIX">
+<div class="mini-info">
+<h4>Pagamento PIX</h4>
+<span>Rápido e seguro</span>
 </div>
-
-<div class="mini-gas-card">
-<img src="./imagem/hero3.png">
 </div>
 
 </div>
@@ -334,9 +330,7 @@ alt="Botijão Turbo Gás">
 <div class="container">
 
 <div class="section-header">
-
 <h2>Nossos produtos</h2>
-
 </div>
 
 <div class="products-grid">
@@ -344,25 +338,18 @@ alt="Botijão Turbo Gás">
 <div class="product-card fade-up app-card">
 
 <div class="product-image">
-<img src="./imagem/hero1.jpg">
+<img src="./imagem/hero1.jpg" alt="Ultragas">
 </div>
 
 <div class="product-content">
-
 <h3>Ultragas</h3>
-
 <p>Entrega rápida • Gás premium</p>
-
 <h2>R$ 115,00</h2>
 
 <div class="qty-box">
-
 <button onclick="alterarQtd(this,-1)">-</button>
-
 <span>1</span>
-
 <button onclick="alterarQtd(this,1)">+</button>
-
 </div>
 
 <button
@@ -370,7 +357,6 @@ onclick="adicionarCarrinho('Ultragas',115)"
 class="btn-product pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
-
 Adicionar
 
 </button>
@@ -382,25 +368,48 @@ Adicionar
 <div class="product-card fade-up app-card">
 
 <div class="product-image">
-<img src="./imagem/hero3.png">
+<img src="./imagem/hero3.png" alt="Supergasbras">
 </div>
 
 <div class="product-content">
+<h3>Supergasbras</h3>
+<p>Entrega rápida • Gás premium</p>
+<h2>R$ 125,00</h2>
 
+<div class="qty-box">
+<button onclick="alterarQtd(this,-1)">-</button>
+<span>1</span>
+<button onclick="alterarQtd(this,1)">+</button>
+</div>
+
+<button
+onclick="adicionarCarrinho('Supergasbras',125)"
+class="btn-product pulse-btn">
+
+<i class="fa-solid fa-cart-shopping"></i>
+Adicionar
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product-card fade-up app-card">
+
+<div class="product-image">
+<img src="./imagem/hero3.png" alt="Água Mineral 20L">
+</div>
+
+<div class="product-content">
 <h3>Água Mineral 20L</h3>
-
 <p>Água gelada • Entrega rápida</p>
-
 <h2>R$ 18,00</h2>
 
 <div class="qty-box">
-
 <button onclick="alterarQtd(this,-1)">-</button>
-
 <span>1</span>
-
 <button onclick="alterarQtd(this,1)">+</button>
-
 </div>
 
 <button
@@ -408,7 +417,6 @@ onclick="adicionarCarrinho('Água 20L',18)"
 class="btn-product pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
-
 Adicionar
 
 </button>
@@ -427,61 +435,37 @@ Adicionar
 
 <div class="container info-grid">
 
-<button class="info-item">
-
-<img src="./imagem/hero1.jpg">
-
+<div class="info-item">
+<i class="fa-solid fa-cart-shopping"></i>
 <div>
-
 <h4>1. Escolha os produtos</h4>
-
 <p>Adicione no carrinho</p>
-
+</div>
 </div>
 
-</button>
-
-<button class="info-item">
-
-<img src="./imagem/hero3.png">
-
+<div class="info-item">
+<i class="fa-solid fa-location-dot"></i>
 <div>
-
 <h4>2. Informe endereço</h4>
-
 <p>Entrega rápida na região</p>
-
+</div>
 </div>
 
-</button>
-
-<button class="info-item">
-
-<img src="./imagem/hero1.jpg">
-
+<div class="info-item">
+<i class="fa-solid fa-credit-card"></i>
 <div>
-
 <h4>3. Finalize o pedido</h4>
-
 <p>PIX, dinheiro ou cartão</p>
-
+</div>
 </div>
 
-</button>
-
-<button class="info-item">
-
-<img src="./imagem/hero3.png">
-
+<div class="info-item">
+<i class="fa-solid fa-truck-fast"></i>
 <div>
-
 <h4>4. Receba em casa</h4>
-
 <p>Entrega em até 60 min</p>
-
 </div>
-
-</button>
+</div>
 
 </div>
 
@@ -498,42 +482,32 @@ Adicionar
 <div class="sobre-grid">
 
 <div class="sobre-card">
-
 <h3>Nossa história</h3>
-
 <p>
-
 A Turbo Gás nasceu no Paulo VI com foco em
 agilidade, atendimento humano e entrega rápida.
-
+Começamos atendendo apenas vizinhos da região
+e hoje levamos gás e água mineral para diversos
+bairros próximos com qualidade e segurança.
 </p>
-
 </div>
 
 <div class="sobre-card">
-
 <h3>Missão</h3>
-
 <p>
-
 Entregar gás e água com rapidez,
-preço justo e confiança.
-
+preço justo e confiança, mantendo
+um atendimento simples e direto.
 </p>
-
 </div>
 
 <div class="sobre-card">
-
 <h3>Atendimento</h3>
-
 <p>
-
 Funcionamos todos os dias,
-das 07h às 22h.
-
+das 07h às 22h, com pedidos rápidos
+e suporte direto pelo WhatsApp.
 </p>
-
 </div>
 
 </div>
@@ -542,51 +516,78 @@ das 07h às 22h.
 
 </section>
 
+<section class="maps">
+
+<iframe
+src="https://www.google.com/maps?q=Rua%20Joao%20Lemos%20Belo%20Horizonte%20MG&output=embed"
+loading="lazy">
+</iframe>
+
+</section>
+
 <footer class="footer" id="contato">
 
 <div class="container footer-content">
 
 <div class="footer-logo">
-
 <i class="fa-solid fa-fire-flame-curved"></i>
-
 <h3>TURBO GÁS</h3>
-
 </div>
 
 <p>
 © 2026 Turbo Gás • Todos os direitos reservados
 </p>
 
+<div class="footer-contact">
+
+<a href="https://wa.me/5531997044271">
+<i class="fa-brands fa-whatsapp"></i>
+(31) 99704-4271
+</a>
+
+</div>
+
 </div>
 
 </footer>
+
+<a
+href="https://wa.me/5531997044271"
+target="_blank"
+class="floating-whatsapp">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<div class="pl-credit">
+
+Feito por:
+<a
+href="https://www.pldigitalg.com.br"
+target="_blank">
+
+www.pldigitalG.com.br
+
+</a>
+
+</div>
 
 <div class="cart-modal" id="cartModal">
 
 <div class="cart-content">
 
 <div class="cart-header">
-
 <h2>Seu carrinho</h2>
-
 <button onclick="fecharCarrinho()">×</button>
-
 </div>
 
 <div id="cart-items"></div>
 
-<div class="cart-actions">
-
-<button
-class="btn-clear"
-onclick="esvaziarCarrinho()">
-
+<button class="clear-cart-btn" onclick="esvaziarCarrinho()">
+<i class="fa-solid fa-trash"></i>
 Esvaziar carrinho
-
 </button>
-
-</div>
 
 <div class="delivery-options">
 
@@ -594,13 +595,19 @@ Esvaziar carrinho
 
 <label>
 <input type="radio" name="entrega" value="retirada">
-Retirada na porta
+Retirada na porta - R$ 104,00
 </label>
 
 <label>
 <input type="radio" name="entrega" value="entrega" checked>
-Entrega em domicílio
+Entrega até 6KM do Paulo VI
 </label>
+
+<p class="delivery-info">
+Entrega disponível para bairros próximos da:
+Rua João Lemos - Belo Horizonte MG
+CEP: 31995-150
+</p>
 
 </div>
 
@@ -610,18 +617,14 @@ Entrega em domicílio
 
 <input type="text" id="telefone" placeholder="Seu telefone" required>
 
-<div id="camposEndereco">
-
+<div class="delivery-fields" id="deliveryFields">
 <input type="text" id="endereco" placeholder="Seu endereço completo">
+</div>
 
 <textarea id="obs" placeholder="Observações"></textarea>
 
-</div>
-
 <button type="submit" class="btn-primary modal-btn">
-
 Finalizar Pedido
-
 </button>
 
 </form>
@@ -631,8 +634,6 @@ Finalizar Pedido
 </div>
 
 <script>
-
-/* MENU */
 
 const mobileMenu =
 document.getElementById('menu-mobile');
@@ -644,40 +645,31 @@ mobileMenu.addEventListener('click', () => {
 navbar.classList.toggle('active');
 });
 
-/* HEADER */
-
 const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
-
 header.classList.toggle(
 'scrolled',
 window.scrollY > 30
 );
-
 });
 
-/* SLIDER DIREITA PARA ESQUERDA */
-
-const sliderTrack =
+const slider =
 document.getElementById('sliderTrack');
 
-let position = 0;
+let scrollAmount = slider.scrollWidth;
 
 setInterval(()=>{
 
-position += 1;
+scrollAmount -= 1;
 
-sliderTrack.style.transform =
-`translateX(-${position}px)`;
+slider.scrollLeft = scrollAmount;
 
-if(position > sliderTrack.scrollWidth / 2){
-position = 0;
+if(scrollAmount <= 0){
+scrollAmount = slider.scrollWidth;
 }
 
 },20);
-
-/* CARRINHO */
 
 let carrinho = [];
 
@@ -773,6 +765,8 @@ document
 
 document.body.style.overflow = 'hidden';
 
+atualizarCamposEntrega();
+
 }
 
 function fecharCarrinho(){
@@ -785,46 +779,49 @@ document.body.style.overflow = 'auto';
 
 }
 
-/* ENTREGA */
-
 const radiosEntrega =
 document.querySelectorAll('input[name="entrega"]');
 
-const camposEndereco =
-document.getElementById('camposEndereco');
+radiosEntrega.forEach((radio)=>{
+radio.addEventListener('change', atualizarCamposEntrega);
+});
 
-const enderecoInput =
+function atualizarCamposEntrega(){
+
+const tipoEntrega =
+document.querySelector('input[name="entrega"]:checked').value;
+
+const deliveryFields =
+document.getElementById('deliveryFields');
+
+const endereco =
 document.getElementById('endereco');
 
-radiosEntrega.forEach((radio)=>{
+if(tipoEntrega === 'retirada'){
 
-radio.addEventListener('change',()=>{
-
-if(radio.checked && radio.value === 'retirada'){
-
-camposEndereco.classList.add('hidden-field');
-
-enderecoInput.removeAttribute('required');
+deliveryFields.classList.add('hidden');
+endereco.removeAttribute('required');
+endereco.value = '';
 
 }else{
 
-camposEndereco.classList.remove('hidden-field');
-
-enderecoInput.setAttribute('required',true);
+deliveryFields.classList.remove('hidden');
+endereco.setAttribute('required','required');
 
 }
 
-});
-
-});
-
-/* PEDIDO */
+}
 
 document
 .getElementById('pedidoForm')
 .addEventListener('submit', function(e){
 
 e.preventDefault();
+
+if(carrinho.length === 0){
+alert('Seu carrinho está vazio.');
+return;
+}
 
 const nome =
 document.getElementById('nome').value;
@@ -854,7 +851,7 @@ mensagem +=
 });
 
 mensagem +=
-`%0AEntrega: ${entrega}%0A`;
+`%0ATipo de pedido: ${entrega === 'retirada' ? 'Retirada na porta' : 'Entrega a domicílio'}%0A`;
 
 mensagem +=
 `Nome: ${nome}%0A`;
@@ -863,14 +860,12 @@ mensagem +=
 `Telefone: ${telefone}%0A`;
 
 if(entrega === 'entrega'){
-
 mensagem +=
 `Endereço: ${endereco}%0A`;
+}
 
 mensagem +=
-`Observações: ${obs}%0A`;
-
-}
+`Observações: ${obs}`;
 
 window.open(
 `https://wa.me/5531997044271?text=${mensagem}`,
@@ -878,8 +873,6 @@ window.open(
 );
 
 });
-
-/* FADE */
 
 const fadeElements =
 document.querySelectorAll('.fade-up');
@@ -904,6 +897,8 @@ threshold:0.2
 fadeElements.forEach((el)=>{
 observer.observe(el);
 });
+
+atualizarCamposEntrega();
 
 </script>
 
