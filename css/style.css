@@ -1143,3 +1143,218 @@ right:12px;
 }
 
 }
+/* =====================================================
+CORREÇÃO FINAL TURBO GÁS
+TEXTOS À ESQUERDA + MOCKUP + RESPONSIVO PREMIUM
+COLE NO FINAL DO CSS
+===================================================== */
+
+.hero{
+  min-height:100vh;
+  padding:140px 0 80px;
+  align-items:center;
+  justify-content:flex-start;
+}
+
+.hero::before{
+  background:
+    linear-gradient(90deg,rgba(2,11,38,.20),rgba(2,11,38,.03)),
+    url('../imagem/hero1.jpg') center right / cover no-repeat !important;
+}
+
+.hero::after{
+  background:
+    linear-gradient(90deg,
+      rgba(2,11,38,.94) 0%,
+      rgba(2,11,38,.78) 32%,
+      rgba(2,11,38,.26) 58%,
+      rgba(2,11,38,.04) 100%
+    ),
+    linear-gradient(180deg,
+      rgba(2,11,38,.20) 0%,
+      rgba(2,11,38,.04) 48%,
+      rgba(2,11,38,.75) 100%
+    ) !important;
+}
+
+.hero-grid{
+  justify-content:flex-start !important;
+  text-align:left !important;
+}
+
+.hero-content{
+  width:100%;
+  max-width:620px;
+  margin:0 !important;
+  margin-left:3vw !important;
+  align-items:flex-start !important;
+  text-align:left !important;
+}
+
+.hero-badge{
+  align-self:flex-start;
+}
+
+.hero-content h1{
+  font-size:5.25rem;
+  max-width:680px;
+}
+
+.hero-content p{
+  max-width:520px;
+  text-align:left;
+}
+
+.hero-buttons{
+  justify-content:flex-start !important;
+}
+
+.hero-main-btn{
+  min-width:330px;
+}
+
+/* MOCKUP PARA PRODUTOS SEM FOTO FINAL */
+
+.product-image{
+  background:
+    radial-gradient(circle at 70% 20%, rgba(255,152,0,.30), transparent 28%),
+    radial-gradient(circle at 30% 80%, rgba(15,63,255,.28), transparent 32%),
+    linear-gradient(135deg,#061642,#020b26) !important;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+.product-image img[src=""],
+.product-image img:not([src]){
+  display:none;
+}
+
+.product-image::after{
+  content:"🔥";
+  position:absolute;
+  font-size:4.5rem;
+  opacity:.92;
+  filter:drop-shadow(0 0 24px rgba(255,152,0,.55));
+  pointer-events:none;
+}
+
+/* MOCKUP SLIDER */
+
+.mini-gas-card{
+  background:linear-gradient(135deg,#ffffff,#eef4ff) !important;
+}
+
+.mini-gas-card img{
+  background:
+    radial-gradient(circle at 65% 25%,rgba(255,152,0,.35),transparent 30%),
+    linear-gradient(135deg,#061642,#020b26);
+  object-fit:cover;
+}
+
+/* DESKTOP GRANDE */
+
+@media(min-width:1400px){
+  .hero-content{
+    margin-left:4vw !important;
+  }
+
+  .hero-content h1{
+    font-size:5.8rem;
+  }
+}
+
+/* NOTEBOOK */
+
+@media(max-width:1200px){
+  .hero-content{
+    margin-left:2vw !important;
+    max-width:560px;
+  }
+
+  .hero-content h1{
+    font-size:4.35rem;
+  }
+
+  .hero-main-btn{
+    min-width:300px;
+  }
+}
+
+/* TABLET / MOBILE */
+
+@media(max-width:768px){
+  .hero{
+    min-height:100svh;
+    padding:120px 0 70px;
+  }
+
+  .hero::before{
+    background:
+      linear-gradient(180deg,rgba(2,11,38,.18),rgba(2,11,38,.45)),
+      url('../imagem/hero3.png') center top / cover no-repeat !important;
+  }
+
+  .hero::after{
+    background:
+      linear-gradient(180deg,
+        rgba(2,11,38,.20) 0%,
+        rgba(2,11,38,.36) 38%,
+        rgba(2,11,38,.94) 100%
+      ) !important;
+  }
+
+  .hero-grid{
+    align-items:flex-end !important;
+    min-height:calc(100svh - 170px);
+  }
+
+  .hero-content{
+    margin-left:0 !important;
+    padding-top:260px;
+    max-width:100%;
+    align-items:flex-start !important;
+    text-align:left !important;
+  }
+
+  .hero-content h1{
+    font-size:3rem;
+    line-height:.98;
+    letter-spacing:-2px;
+    max-width:95%;
+  }
+
+  .hero-content p{
+    max-width:92%;
+  }
+
+  .hero-buttons{
+    width:100%;
+  }
+
+  .hero-main-btn{
+    width:100%;
+    min-width:100%;
+  }
+}
+
+@media(max-width:520px){
+  .hero-content{
+    padding-top:300px;
+  }
+
+  .hero-content h1{
+    font-size:2.55rem;
+  }
+
+  .hero-badge{
+    font-size:.70rem;
+  }
+}
