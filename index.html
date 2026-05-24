@@ -12,8 +12,6 @@
 name="description"
 content="Turbo Gás - Entrega rápida de gás em Belo Horizonte e região.">
 
-<!-- GOOGLE FONTS -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -21,31 +19,19 @@ content="Turbo Gás - Entrega rápida de gás em Belo Horizonte e região.">
 href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
 rel="stylesheet">
 
-<!-- FONT AWESOME -->
-
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-<!-- CSS -->
-
 <link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/mobile.css">
-<link rel="stylesheet" href="./css/animations.css">
 
 </head>
 
 <body>
 
-<!-- =========================================
-HEADER
-========================================= -->
-
 <header class="header" id="header">
 
 <div class="container nav-container">
-
-<!-- LOGO -->
 
 <a href="./index.html" class="logo">
 
@@ -57,53 +43,36 @@ HEADER
 
 <h2>TURBO GÁS</h2>
 
-<p>
-Entrega premium em BH
-</p>
+<p>Entrega premium em BH</p>
 
 </div>
 
 </a>
 
-<!-- NAVBAR -->
-
 <nav class="navbar" id="navbar">
 
-<a href="./index.html">Início</a>
-
+<a href="#inicio">Início</a>
 <a href="#produtos">Produtos</a>
-
 <a href="#como-funciona">Como funciona</a>
-
-<a href="./paginas/sobre.html">Sobre nós</a>
-
-<a href="./paginas/contato.html">Contato</a>
+<a href="#sobre">Sobre nós</a>
+<a href="#contato">Contato</a>
 
 </nav>
 
-<!-- ACTIONS -->
-
 <div class="nav-actions">
 
-<a
-href="#produtos"
-class="cart-btn">
+<button class="cart-btn" onclick="abrirCarrinho()">
 
 <i class="fa-solid fa-cart-shopping"></i>
 
 Carrinho
 
-<span id="cart-count">2</span>
+<span id="cart-count">0</span>
 
-</a>
+</button>
 
-<!-- MOBILE -->
-
-<div class="menu-mobile"
-id="menu-mobile">
-
+<div class="menu-mobile" id="menu-mobile">
 <i class="fa-solid fa-bars"></i>
-
 </div>
 
 </div>
@@ -112,17 +81,9 @@ id="menu-mobile">
 
 </header>
 
-<!-- =========================================
-HERO
-========================================= -->
-
-<section class="hero">
-
-<div class="hero-overlay"></div>
+<section class="hero" id="inicio">
 
 <div class="container hero-grid">
-
-<!-- LEFT -->
 
 <div class="hero-content fade-up">
 
@@ -149,12 +110,10 @@ e receba no conforto da sua casa.
 
 </p>
 
-<!-- BUTTON -->
-
 <div class="hero-buttons">
 
 <button
-onclick="abrirModal('Pedido Turbo Gás')"
+onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})"
 class="btn-primary hero-main-btn pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
@@ -163,20 +122,7 @@ PEDIR AGORA
 
 </button>
 
-<a
-href="https://wa.me/5531997044271"
-target="_blank"
-class="btn-secondary">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-WhatsApp
-
-</a>
-
 </div>
-
-<!-- FEATURES -->
 
 <div class="hero-features">
 
@@ -188,9 +134,7 @@ WhatsApp
 
 <h4>Entrega rápida</h4>
 
-<p>
-Até 60 minutos
-</p>
+<p>Até 60 minutos</p>
 
 </div>
 
@@ -204,9 +148,7 @@ Até 60 minutos
 
 <h4>Compra segura</h4>
 
-<p>
-Pagamento protegido
-</p>
+<p>Pagamento protegido</p>
 
 </div>
 
@@ -220,9 +162,7 @@ Pagamento protegido
 
 <h4>Qualidade garantida</h4>
 
-<p>
-Revenda autorizada
-</p>
+<p>Revenda autorizada</p>
 
 </div>
 
@@ -231,18 +171,12 @@ Revenda autorizada
 </div>
 
 </div>
-
-<!-- RIGHT -->
 
 <div class="hero-image fade-up">
-
-<div class="hero-glow"></div>
 
 <img
 src="./imagem/hero1.png"
 alt="Botijão Turbo Gás">
-
-<!-- DELIVERY CARD -->
 
 <div class="delivery-card glass-card">
 
@@ -254,9 +188,7 @@ alt="Botijão Turbo Gás">
 
 <h4>Entregamos em:</h4>
 
-<p>
-Belo Horizonte e região
-</p>
+<p>Belo Horizonte e região</p>
 
 </div>
 
@@ -272,9 +204,7 @@ Belo Horizonte e região
 
 <h4>Horário:</h4>
 
-<p>
-07h às 22h
-</p>
+<p>07h às 22h</p>
 
 </div>
 
@@ -287,95 +217,56 @@ Belo Horizonte e região
 </div>
 
 </section>
-
-<!-- =========================================
-SLIDER
-========================================= -->
 
 <section class="gas-slider">
 
-<div class="slider-track">
+<div class="slider-track" id="sliderTrack">
 
 <div class="mini-gas-card">
-
-<img src="./imagem/hero1.jpg" alt="Ultragas">
-
+<img src="./imagem/hero1.jpg">
 <div class="mini-info">
-
 <h4>Ultragas</h4>
-
 <span>Entrega Turbo</span>
-
 </div>
-
 </div>
 
 <div class="mini-gas-card">
-
-<img src="./imagem/hero2.jpg" alt="Supergasbras">
-
+<img src="./imagem/hero2.jpg">
 <div class="mini-info">
-
 <h4>Supergasbras</h4>
-
 <span>Chega rápido</span>
-
 </div>
-
-</div>
-
-<div class="mini-gas-card">
-
-<img src="./imagem/hero3.png" alt="Turbo Gás">
-
-<div class="mini-info">
-
-<h4>Turbo Gás</h4>
-
-<span>Pagamento PIX</span>
-
-</div>
-
 </div>
 
 <div class="mini-gas-card">
-
-<img src="./imagem/hero1.jpg" alt="Entrega">
-
+<img src="./imagem/hero3.png">
 <div class="mini-info">
+<h4>Água 20L</h4>
+<span>Gelada e lacrada</span>
+</div>
+</div>
 
+<div class="mini-gas-card">
+<img src="./imagem/hero1.jpg">
+<div class="mini-info">
 <h4>Entrega</h4>
-
 <span>Até 60 minutos</span>
-
 </div>
-
 </div>
 
 <div class="mini-gas-card">
-
-<img src="./imagem/hero2.jpg" alt="Atendimento">
-
+<img src="./imagem/hero2.jpg">
 <div class="mini-info">
-
-<h4>Atendimento</h4>
-
-<span>Todos os dias</span>
-
+<h4>Pagamento PIX</h4>
+<span>Rápido e seguro</span>
 </div>
-
 </div>
 
 </div>
 
 </section>
 
-<!-- =========================================
-PRODUCTS
-========================================= -->
-
-<section class="products"
-id="produtos">
+<section class="products" id="produtos">
 
 <div class="container">
 
@@ -383,65 +274,41 @@ id="produtos">
 
 <h2>Nossos produtos</h2>
 
-<a href="./paginas/produtos.html">
-
-Ver todos
-
-<i class="fa-solid fa-chevron-right"></i>
-
-</a>
-
 </div>
 
 <div class="products-grid">
 
-<!-- CARD -->
-
 <div class="product-card fade-up app-card">
 
-<div class="product-top">
-
-<div class="product-badge">
-Entrega rápida
-</div>
-
-<i class="fa-solid fa-heart"></i>
-
-</div>
-
 <div class="product-image">
-
-<img
-src="./imagem/hero1.jpg"
-alt="Ultragas">
-
+<img src="./imagem/hero1.jpg">
 </div>
 
 <div class="product-content">
 
 <h3>Ultragas</h3>
 
-<p>
-Entrega rápida • Gás premium
-</p>
+<p>Entrega rápida • Gás premium</p>
 
 <h2>R$ 115,00</h2>
 
-<div class="tag-delivery">
+<div class="qty-box">
 
-<i class="fa-regular fa-clock"></i>
+<button onclick="alterarQtd(this,-1)">-</button>
 
-Entrega em até 60 min
+<span>1</span>
+
+<button onclick="alterarQtd(this,1)">+</button>
 
 </div>
 
 <button
-onclick="abrirModal('Ultragas')"
+onclick="adicionarCarrinho('Ultragas',115)"
 class="btn-product pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
 
-Pedir agora
+Adicionar
 
 </button>
 
@@ -449,53 +316,75 @@ Pedir agora
 
 </div>
 
-<!-- CARD -->
-
 <div class="product-card fade-up app-card">
 
-<div class="product-top">
-
-<div class="product-badge">
-Mais vendido
-</div>
-
-<i class="fa-solid fa-heart"></i>
-
-</div>
-
 <div class="product-image">
-
-<img
-src="./imagem/hero2.png"
-alt="Supergasbras">
-
+<img src="./imagem/hero2.png">
 </div>
 
 <div class="product-content">
 
 <h3>Supergasbras</h3>
 
-<p>
-Entrega rápida • Gás premium
-</p>
+<p>Entrega rápida • Gás premium</p>
 
 <h2>R$ 125,00</h2>
 
-<div class="tag-delivery">
+<div class="qty-box">
 
-<i class="fa-regular fa-clock"></i>
+<button onclick="alterarQtd(this,-1)">-</button>
 
-Entrega em até 60 min
+<span>1</span>
+
+<button onclick="alterarQtd(this,1)">+</button>
 
 </div>
 
 <button
-onclick="abrirModal('Supergasbras')"
+onclick="adicionarCarrinho('Supergasbras',125)"
 class="btn-product pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
 
-Pedir agora
+Adicionar
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product-card fade-up app-card">
+
+<div class="product-image">
+<img src="./imagem/hero3.png">
+</div>
+
+<div class="product-content">
+
+<h3>Água Mineral 20L</h3>
+
+<p>Água gelada • Entrega rápida</p>
+
+<h2>R$ 18,00</h2>
+
+<div class="qty-box">
+
+<button onclick="alterarQtd(this,-1)">-</button>
+
+<span>1</span>
+
+<button onclick="alterarQtd(this,1)">+</button>
+
+</div>
+
+<button
+onclick="adicionarCarrinho('Água 20L',18)"
+class="btn-product pulse-btn">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Adicionar
 
 </button>
 
@@ -509,43 +398,19 @@ Pedir agora
 
 </section>
 
-<!-- =========================================
-COMO FUNCIONA
-========================================= -->
-
-<section
-class="info-bar"
-id="como-funciona">
+<section class="info-bar" id="como-funciona">
 
 <div class="container info-grid">
 
 <div class="info-item">
 
-<i class="fa-brands fa-whatsapp"></i>
+<i class="fa-solid fa-cart-shopping"></i>
 
 <div>
 
-<h4>1. Clique no pedido</h4>
+<h4>1. Escolha os produtos</h4>
 
-<p>
-Pedido rápido e simples
-</p>
-
-</div>
-
-</div>
-
-<div class="info-item">
-
-<i class="fa-solid fa-gas-pump"></i>
-
-<div>
-
-<h4>2. Escolha o gás</h4>
-
-<p>
-Escolha seu produto
-</p>
+<p>Adicione no carrinho</p>
 
 </div>
 
@@ -557,11 +422,23 @@ Escolha seu produto
 
 <div>
 
-<h4>3. Informe o endereço</h4>
+<h4>2. Informe endereço</h4>
 
-<p>
-Entrega rápida na região
-</p>
+<p>Entrega rápida na região</p>
+
+</div>
+
+</div>
+
+<div class="info-item">
+
+<i class="fa-solid fa-credit-card"></i>
+
+<div>
+
+<h4>3. Finalize o pedido</h4>
+
+<p>PIX, dinheiro ou cartão</p>
 
 </div>
 
@@ -575,8 +452,66 @@ Entrega rápida na região
 
 <h4>4. Receba em casa</h4>
 
+<p>Entrega em até 60 min</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="sobre" id="sobre">
+
+<div class="container">
+
+<div class="section-header">
+<h2>Sobre nós</h2>
+</div>
+
+<div class="sobre-grid">
+
+<div class="sobre-card">
+
+<h3>Nossa história</h3>
+
 <p>
-Entrega em até 60 min
+
+A Turbo Gás nasceu no Paulo VI com foco em
+agilidade, atendimento humano e entrega rápida.
+Começamos atendendo apenas vizinhos da região
+e hoje levamos gás e água mineral para diversos
+bairros próximos com qualidade e segurança.
+
+</p>
+
+</div>
+
+<div class="sobre-card">
+
+<h3>Missão</h3>
+
+<p>
+
+Entregar gás e água com rapidez,
+preço justo e confiança, mantendo
+um atendimento simples e direto.
+
+</p>
+
+</div>
+
+<div class="sobre-card">
+
+<h3>Atendimento</h3>
+
+<p>
+
+Funcionamos todos os dias,
+das 07h às 22h, com pedidos rápidos
+e suporte direto pelo WhatsApp.
+
 </p>
 
 </div>
@@ -587,24 +522,16 @@ Entrega em até 60 min
 
 </section>
 
-<!-- =========================================
-MAPA FULL
-========================================= -->
-
 <section class="maps">
 
 <iframe
-src="https://www.google.com/maps?q=Rua%20Antônio%20Mariano%20de%20Abreu,%20478&output=embed"
+src="https://www.google.com/maps?q=Rua%20Joao%20Lemos%20Belo%20Horizonte%20MG&output=embed"
 loading="lazy">
 </iframe>
 
 </section>
 
-<!-- =========================================
-FOOTER
-========================================= -->
-
-<footer class="footer">
+<footer class="footer" id="contato">
 
 <div class="container footer-content">
 
@@ -636,10 +563,6 @@ FOOTER
 
 </footer>
 
-<!-- =========================================
-WHATS FLOAT
-========================================= -->
-
 <a
 href="https://wa.me/5531997044271"
 target="_blank"
@@ -648,10 +571,6 @@ class="floating-whatsapp">
 <i class="fa-brands fa-whatsapp"></i>
 
 </a>
-
-<!-- =========================================
-PL DIGITAL
-========================================= -->
 
 <div class="pl-credit">
 
@@ -666,53 +585,59 @@ www.pldigitalG.com.br
 
 </div>
 
-<!-- =========================================
-MODAL PEDIDO
-========================================= -->
+<!-- CARRINHO -->
 
-<div class="modal-pedido" id="modalPedido">
+<div class="cart-modal" id="cartModal">
 
-<div class="modal-content">
+<div class="cart-content">
 
-<button
-class="close-modal"
-onclick="fecharModal()">
+<div class="cart-header">
 
-×
+<h2>Seu carrinho</h2>
 
-</button>
+<button onclick="fecharCarrinho()">×</button>
 
-<h2>Finalizar Pedido</h2>
+</div>
+
+<div id="cart-items"></div>
+
+<div class="delivery-options">
+
+<h3>Entrega</h3>
+
+<label>
+<input type="radio" name="entrega" value="retirada">
+Retirada na porta - R$ 104,00
+</label>
+
+<label>
+<input type="radio" name="entrega" value="entrega" checked>
+Entrega até 6KM do Paulo VI
+</label>
+
+<p class="delivery-info">
+
+Entrega disponível para bairros próximos da:
+Rua João Lemos - Belo Horizonte MG
+CEP: 31995-150
+
+</p>
+
+</div>
 
 <form id="pedidoForm">
 
-<input
-type="text"
-id="nome"
-placeholder="Seu nome"
-required>
+<input type="text" id="nome" placeholder="Seu nome" required>
 
-<input
-type="text"
-id="telefone"
-placeholder="Seu telefone"
-required>
+<input type="text" id="telefone" placeholder="Seu telefone" required>
 
-<input
-type="text"
-id="endereco"
-placeholder="Seu endereço completo"
-required>
+<input type="text" id="endereco" placeholder="Seu endereço completo" required>
 
-<textarea
-id="obs"
-placeholder="Observações"></textarea>
+<textarea id="obs" placeholder="Observações"></textarea>
 
-<button
-type="submit"
-class="btn-primary modal-btn">
+<button type="submit" class="btn-primary modal-btn">
 
-Enviar pedido
+Finalizar Pedido
 
 </button>
 
@@ -722,29 +647,19 @@ Enviar pedido
 
 </div>
 
-<!-- =========================================
-APP.JS
-========================================= -->
-
-<script src="./js/app.js"></script>
-
-<!-- =========================================
-MODAL.JS
-========================================= -->
-
-<script src="./js/modal.js"></script>
-
-<!-- =========================================
-WHATSAPP.JS
-========================================= -->
-
-<script src="./js/whatsapp.js"></script>
-
-<!-- =========================================
-SCRIPT EXTRA
-========================================= -->
-
 <script>
+
+/* MENU */
+
+const mobileMenu =
+document.getElementById('menu-mobile');
+
+const navbar =
+document.getElementById('navbar');
+
+mobileMenu.addEventListener('click', () => {
+navbar.classList.toggle('active');
+});
 
 /* HEADER */
 
@@ -759,62 +674,128 @@ window.scrollY > 30
 
 });
 
-/* MOBILE MENU */
+/* SLIDER */
 
-const mobileMenu =
-document.getElementById('menu-mobile');
+const slider =
+document.getElementById('sliderTrack');
 
-const navbar =
-document.getElementById('navbar');
+let scrollAmount = 0;
 
-mobileMenu.addEventListener('click', () => {
+setInterval(()=>{
 
-navbar.classList.toggle('active');
+scrollAmount += 1;
+
+slider.scrollLeft = scrollAmount;
+
+if(scrollAmount >= slider.scrollWidth / 2){
+
+scrollAmount = 0;
+
+}
+
+},20);
+
+/* CARRINHO */
+
+let carrinho = [];
+
+function alterarQtd(btn,valor){
+
+const span = btn.parentElement.querySelector('span');
+
+let qtd = parseInt(span.innerText);
+
+qtd += valor;
+
+if(qtd < 1){
+qtd = 1;
+}
+
+span.innerText = qtd;
+
+}
+
+function adicionarCarrinho(produto,preco){
+
+const card =
+event.target.closest('.product-card');
+
+const qtd =
+parseInt(card.querySelector('.qty-box span').innerText);
+
+carrinho.push({
+produto,
+preco,
+qtd
+});
+
+atualizarCarrinho();
+
+}
+
+function atualizarCarrinho(){
+
+const cartItems =
+document.getElementById('cart-items');
+
+const cartCount =
+document.getElementById('cart-count');
+
+cartItems.innerHTML = '';
+
+let totalItens = 0;
+
+carrinho.forEach((item)=>{
+
+totalItens += item.qtd;
+
+cartItems.innerHTML += `
+
+<div class="cart-item">
+
+<div>
+
+<h4>${item.produto}</h4>
+
+<p>${item.qtd}x • R$ ${item.preco}</p>
+
+</div>
+
+<strong>
+R$ ${(item.preco * item.qtd).toFixed(2)}
+</strong>
+
+</div>
+
+`;
 
 });
 
-/* MODAL */
+cartCount.innerText = totalItens;
 
-let produtoSelecionado = '';
+}
 
-function abrirModal(produto){
-
-produtoSelecionado = produto;
+function abrirCarrinho(){
 
 document
-.getElementById('modalPedido')
+.getElementById('cartModal')
 .style.display = 'flex';
 
 document.body.style.overflow = 'hidden';
 
 }
 
-function fecharModal(){
+function fecharCarrinho(){
 
 document
-.getElementById('modalPedido')
+.getElementById('cartModal')
 .style.display = 'none';
 
 document.body.style.overflow = 'auto';
 
 }
 
-/* FECHAR CLICANDO FORA */
-
-window.addEventListener('click', (e) => {
-
-const modal =
-document.getElementById('modalPedido');
-
-if(e.target === modal){
-
-fecharModal();
-
-}
-
-});
-
-/* FORM */
+/* PEDIDO */
 
 document
 .getElementById('pedidoForm')
@@ -834,12 +815,34 @@ document.getElementById('endereco').value;
 const obs =
 document.getElementById('obs').value;
 
-const mensagem =
-`Olá Turbo Gás!%0A%0A` +
-`Produto: ${produtoSelecionado}%0A` +
-`Nome: ${nome}%0A` +
-`Telefone: ${telefone}%0A` +
-`Endereço: ${endereco}%0A` +
+const entrega =
+document.querySelector(
+'input[name="entrega"]:checked'
+).value;
+
+let mensagem =
+`Olá Turbo Gás!%0A%0A`;
+
+carrinho.forEach((item)=>{
+
+mensagem +=
+`${item.qtd}x ${item.produto} - R$ ${item.preco}%0A`;
+
+});
+
+mensagem +=
+`%0AEntrega: ${entrega}%0A`;
+
+mensagem +=
+`Nome: ${nome}%0A`;
+
+mensagem +=
+`Telefone: ${telefone}%0A`;
+
+mensagem +=
+`Endereço: ${endereco}%0A`;
+
+mensagem +=
 `Observações: ${obs}`;
 
 window.open(
@@ -847,11 +850,9 @@ window.open(
 '_blank'
 );
 
-fecharModal();
-
 });
 
-/* FADE UP */
+/* FADE */
 
 const fadeElements =
 document.querySelectorAll('.fade-up');
@@ -874,9 +875,7 @@ threshold:0.2
 });
 
 fadeElements.forEach((el)=>{
-
 observer.observe(el);
-
 });
 
 </script>
