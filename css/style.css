@@ -1745,3 +1745,185 @@ COLE NO FINAL DO CSS
     font-size:.72rem !important;
   }
 }
+/* =====================================================
+TURBO GÁS - CORREÇÃO SEM ALTERAR INDEX
+HERO DESKTOP/MOBILE + SLIDE + MOBILE TEXTO TOPO + PREMIUM
+COLE NO FINAL DO style.css
+===================================================== */
+
+/* força caminho correto mesmo com o style do index */
+html body main section.hero#inicio::before{
+  background-size:cover !important;
+  background-position:center right !important;
+  background-repeat:no-repeat !important;
+  animation:turboHeroSlide 8s infinite ease-in-out !important;
+}
+
+/* slide seguro: desktop e mobile */
+@keyframes turboHeroSlide{
+  0%,45%{
+    background-image:url('../imagem/hero-desktop.jpg') !important;
+  }
+
+  50%,100%{
+    background-image:url('../imagem/hero-mobile.jpg') !important;
+  }
+}
+
+/* lightbox/cards mais premium e menos branco */
+.delivery-card,
+.product-card,
+.sobre-card,
+.cart-content,
+.mini-gas-card,
+.info-item,
+.delivery-options{
+  background:linear-gradient(135deg,rgba(245,248,255,.84),rgba(221,231,248,.72)) !important;
+  border:1px solid rgba(255,255,255,.28) !important;
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.26),
+    inset 0 1px 0 rgba(255,255,255,.45) !important;
+  backdrop-filter:blur(18px) saturate(1.18) !important;
+}
+
+/* deixa o modal do carrinho mais empresa grande */
+.cart-modal{
+  background:rgba(0,8,28,.78) !important;
+  backdrop-filter:blur(8px) !important;
+}
+
+.cart-content{
+  border-radius:34px !important;
+}
+
+/* slider passando mais rápido */
+.slider-track{
+  animation-duration:12s !important;
+}
+
+.info-item{
+  animation-duration:12s !important;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  html body main section.hero#inicio{
+    height:100svh !important;
+    min-height:620px !important;
+    padding:86px 0 24px !important;
+    display:flex !important;
+    align-items:flex-start !important;
+    overflow:hidden !important;
+  }
+
+  html body main section.hero#inicio::before{
+    background-size:cover !important;
+    background-position:center top !important;
+    animation:turboHeroMobileSlide 8s infinite ease-in-out !important;
+    transform:none !important;
+  }
+
+  @keyframes turboHeroMobileSlide{
+    0%,45%{
+      background-image:url('../imagem/hero-mobile.jpg') !important;
+    }
+
+    50%,100%{
+      background-image:url('../imagem/hero-desktop.jpg') !important;
+    }
+  }
+
+  .hero::after{
+    background:
+      linear-gradient(180deg,
+        rgba(2,11,38,.70) 0%,
+        rgba(2,11,38,.48) 35%,
+        rgba(2,11,38,.72) 68%,
+        rgba(2,11,38,.96) 100%
+      ) !important;
+  }
+
+  .hero-grid{
+    min-height:auto !important;
+    height:auto !important;
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
+    text-align:left !important;
+    padding-top:18px !important;
+  }
+
+  .hero-content{
+    margin:0 !important;
+    padding:0 !important;
+    width:100% !important;
+    max-width:100% !important;
+    align-items:flex-start !important;
+    text-align:left !important;
+    transform:none !important;
+  }
+
+  .hero-badge{
+    margin-bottom:10px !important;
+    font-size:.64rem !important;
+    padding:7px 11px !important;
+  }
+
+  .hero-content h1{
+    font-size:2.18rem !important;
+    line-height:1 !important;
+    letter-spacing:-1.1px !important;
+    margin-bottom:9px !important;
+    max-width:92% !important;
+  }
+
+  .hero-content p{
+    font-size:.78rem !important;
+    line-height:1.42 !important;
+    margin-bottom:15px !important;
+    max-width:92% !important;
+  }
+
+  .hero-buttons{
+    width:100% !important;
+    justify-content:flex-start !important;
+  }
+
+  .hero-main-btn{
+    width:100% !important;
+    min-width:100% !important;
+    padding:15px 18px !important;
+    font-size:.84rem !important;
+    border-radius:20px !important;
+  }
+
+  .delivery-card{
+    display:none !important;
+  }
+}
+
+/* celular pequeno */
+@media(max-width:390px){
+
+  html body main section.hero#inicio{
+    min-height:590px !important;
+    padding-top:78px !important;
+  }
+
+  .hero-grid{
+    padding-top:10px !important;
+  }
+
+  .hero-content h1{
+    font-size:1.95rem !important;
+  }
+
+  .hero-content p{
+    font-size:.72rem !important;
+  }
+
+  .hero-main-btn{
+    padding:14px 16px !important;
+    font-size:.78rem !important;
+  }
+}
