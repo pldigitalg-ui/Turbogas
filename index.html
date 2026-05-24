@@ -15,8 +15,45 @@
 <link rel="stylesheet" href="./css/style.css">
 
 <style>
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+
 .hero::before{
-  background-image:url('./imagem/hero1.jpg') !important;
+  display:none !important;
+}
+
+.hero-slide{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:0;
+  transform:scale(1.04);
+  transition:opacity 1.2s ease, transform 6s ease;
+  z-index:0;
+}
+
+.hero-slide.active{
+  opacity:1;
+  transform:scale(1);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(2,11,38,.92) 0%,rgba(2,11,38,.70) 36%,rgba(2,11,38,.25) 70%,rgba(2,11,38,.08) 100%);
+  z-index:1;
+  pointer-events:none;
+}
+
+.hero-grid,
+.delivery-card{
+  position:relative;
+  z-index:2;
 }
 
 .toast{
@@ -41,9 +78,21 @@
   transform:translateX(-50%) translateY(0);
 }
 
+.hidden{
+  display:none !important;
+}
+
 @media(max-width:768px){
-  .hero::before{
-    background-image:url('./imagem/hero3.webp') !important;
+  .hero-slide{
+    background-position:center top;
+  }
+
+  .hero::after{
+    background:linear-gradient(180deg,rgba(2,11,38,.92) 0%,rgba(2,11,38,.70) 45%,rgba(2,11,38,.28) 100%);
+  }
+
+  .hero-content{
+    padding-top:90px;
   }
 }
 </style>
@@ -88,6 +137,11 @@
 <main>
 
 <section class="hero" id="inicio">
+
+  <div class="hero-slide active" style="background-image:url('./imagem/hero1.jpg');"></div>
+  <div class="hero-slide" style="background-image:url('./imagem/hero2.png');"></div>
+  <div class="hero-slide" style="background-image:url('./imagem/hero3.webp');"></div>
+
   <div class="container hero-grid">
     <div class="hero-content fade-up">
       <div class="hero-badge">
@@ -134,53 +188,55 @@
 
 <section class="gas-slider">
   <div class="slider-track">
+
     <div class="mini-gas-card">
-      <img src="./imagem/hero3.webp" alt="Botijão de gás">
+      <img src="./imagem/gasportaria.png" alt="Gás portaria">
       <div class="mini-info">
         <h4>Ultragas</h4>
-        <span>Portaria a partir de R$105</span>
+        <span>Portaria R$105</span>
       </div>
     </div>
 
     <div class="mini-gas-card">
-      <img src="./imagem/hero1.jpg" alt="Entrega de gás">
-      <div class="mini-info">
-        <h4>Supergasbras</h4>
-        <span>Portaria a partir de R$110</span>
-      </div>
-    </div>
-
-    <div class="mini-gas-card">
-      <img src="./imagem/hero3.webp" alt="Água mineral">
-      <div class="mini-info">
-        <h4>Água</h4>
-        <span>Galão por R$20</span>
-      </div>
-    </div>
-
-    <div class="mini-gas-card">
-      <img src="./imagem/hero3.webp" alt="Botijão de gás">
+      <img src="./imagem/gas115.png" alt="Gás entrega">
       <div class="mini-info">
         <h4>Ultragas</h4>
-        <span>Entrega a partir de R$115</span>
+        <span>Entrega R$115</span>
       </div>
     </div>
 
     <div class="mini-gas-card">
-      <img src="./imagem/hero1.jpg" alt="Entrega de gás">
+      <img src="./imagem/gas.png" alt="Supergasbras">
       <div class="mini-info">
         <h4>Supergasbras</h4>
-        <span>Entrega a partir de R$125</span>
+        <span>Portaria R$110</span>
       </div>
     </div>
 
     <div class="mini-gas-card">
-      <img src="./imagem/hero3.webp" alt="Água mineral">
+      <img src="./imagem/agua.png" alt="Água mineral">
       <div class="mini-info">
-        <h4>Pedido rápido</h4>
+        <h4>Água Mineral</h4>
+        <span>Galão R$20</span>
+      </div>
+    </div>
+
+    <div class="mini-gas-card">
+      <img src="./imagem/gasportaria.png" alt="Gás portaria">
+      <div class="mini-info">
+        <h4>Ultragas</h4>
+        <span>Portaria R$105</span>
+      </div>
+    </div>
+
+    <div class="mini-gas-card">
+      <img src="./imagem/gas115.png" alt="Gás entrega">
+      <div class="mini-info">
+        <h4>Entrega rápida</h4>
         <span>Finalização no WhatsApp</span>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -195,7 +251,7 @@
 
       <article class="product-card">
         <div class="product-image">
-          <img src="./imagem/hero3.png" alt="Ultragas">
+          <img src="./imagem/gasportaria.png" alt="Ultragas portaria">
         </div>
         <div class="product-content">
           <h3>Ultragas - Portaria</h3>
@@ -210,7 +266,7 @@
 
       <article class="product-card">
         <div class="product-image">
-          <img src="./imagem/hero3.png" alt="Ultragas entrega">
+          <img src="./imagem/gas115.png" alt="Ultragas entrega">
         </div>
         <div class="product-content">
           <h3>Ultragas - Entrega</h3>
@@ -225,7 +281,7 @@
 
       <article class="product-card">
         <div class="product-image">
-          <img src="./imagem/hero1.jpg" alt="Supergasbras">
+          <img src="./imagem/gas.png" alt="Supergasbras portaria">
         </div>
         <div class="product-content">
           <h3>Supergasbras - Portaria</h3>
@@ -240,7 +296,7 @@
 
       <article class="product-card">
         <div class="product-image">
-          <img src="./imagem/hero1.jpg" alt="Supergasbras entrega">
+          <img src="./imagem/gas.png" alt="Supergasbras entrega">
         </div>
         <div class="product-content">
           <h3>Supergasbras - Entrega</h3>
@@ -255,11 +311,11 @@
 
       <article class="product-card">
         <div class="product-image">
-          <img src="./imagem/hero3.png" alt="Água mineral">
+          <img src="./imagem/agua.png" alt="Água mineral">
         </div>
         <div class="product-content">
           <h3>Água Mineral</h3>
-          <p>Galão de água.</p>
+          <p>Galão de água mineral.</p>
           <h2>R$20,00</h2>
           <button class="btn-product" onclick="addToCart('Água Mineral',20)">
             <i class="fa-solid fa-cart-plus"></i>
@@ -462,6 +518,7 @@ function toggleMenu(){
 
 window.addEventListener("scroll", () => {
   const header = document.getElementById("header");
+
   if(window.scrollY > 30){
     header.classList.add("scrolled");
   }else{
@@ -471,6 +528,19 @@ window.addEventListener("scroll", () => {
 
 function scrollToProducts(){
   document.getElementById("produtos").scrollIntoView({ behavior:"smooth" });
+}
+
+function startHeroSlider(){
+  const slides = document.querySelectorAll(".hero-slide");
+  let current = 0;
+
+  if(!slides.length) return;
+
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 4200);
 }
 
 function showToast(){
@@ -617,6 +687,7 @@ function sendOrder(){
 
   if(deliveryType === "Entrega em domicílio"){
     message += `%0AEndereço: ${address}`;
+
     if(reference){
       message += `%0AReferência: ${reference}`;
     }
@@ -638,6 +709,7 @@ document.addEventListener("click", function(e){
   }
 });
 
+startHeroSlider();
 toggleDeliveryFields();
 updateCart();
 </script>
