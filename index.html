@@ -23,7 +23,7 @@ rel="stylesheet">
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./CSS/style.css">
 
 <style>
 .info-bar{
@@ -96,6 +96,74 @@ cursor:pointer;
 display:none;
 }
 
+.toast-add{
+position:fixed;
+top:105px;
+left:50%;
+transform:translateX(-50%) translateY(-20px);
+background:#00c853;
+color:#fff;
+padding:14px 22px;
+border-radius:999px;
+font-size:14px;
+font-weight:900;
+z-index:99999;
+box-shadow:0 16px 45px rgba(0,200,83,.45);
+opacity:0;
+pointer-events:none;
+transition:.35s;
+}
+
+.toast-add.show{
+opacity:1;
+transform:translateX(-50%) translateY(0);
+}
+
+.price-list{
+display:flex;
+flex-direction:column;
+gap:6px;
+margin:12px 0 16px;
+font-size:13px;
+line-height:1.45;
+color:#d7d7d7;
+}
+
+.price-list strong{
+color:#ff9800;
+}
+
+.cart-total{
+margin-top:18px;
+padding:16px;
+border-radius:18px;
+background:rgba(255,152,0,.12);
+border:1px solid rgba(255,152,0,.25);
+font-weight:900;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:12px;
+}
+
+.payment-options{
+margin-top:18px;
+padding:20px;
+border-radius:20px;
+background:rgba(255,255,255,.05);
+}
+
+.payment-options h3{
+margin-bottom:18px;
+}
+
+.payment-options label{
+display:flex;
+gap:10px;
+margin-bottom:14px;
+line-height:1.6;
+}
+
 @media(max-width:768px){
 .hero-grid{
 grid-template-columns:1fr;
@@ -124,6 +192,12 @@ border-radius:24px;
 background:rgba(255,255,255,.16);
 }
 
+.toast-add{
+top:92px;
+width:88%;
+text-align:center;
+}
+
 @keyframes infoSlide{
 0%{transform:translateX(100%);}
 100%{transform:translateX(-520%);}
@@ -134,6 +208,11 @@ background:rgba(255,255,255,.16);
 </head>
 
 <body>
+
+<div class="toast-add" id="toastAdd">
+<i class="fa-brands fa-whatsapp"></i>
+Item adicionado ao carrinho
+</div>
 
 <header class="header" id="header">
 
@@ -246,7 +325,7 @@ PEDIR AGORA
 <div class="hero-image fade-up">
 
 <img
-src="./imagem/hero1.png"
+src="./imagem/hero1.jpg"
 alt="Botijão Turbo Gás">
 
 <div class="delivery-card glass-card">
@@ -282,7 +361,7 @@ alt="Botijão Turbo Gás">
 <div class="slider-track" id="sliderTrack">
 
 <div class="mini-gas-card">
-<img src=".imagem/hero1.jpg" alt="Ultragas">
+<img src="./imagem/hero1.jpg" alt="Ultragas">
 <div class="mini-info">
 <h4>Ultragas</h4>
 <span>Entrega Turbo</span>
@@ -290,7 +369,7 @@ alt="Botijão Turbo Gás">
 </div>
 
 <div class="mini-gas-card">
-<img src=".imagem/hero3.png" alt="Supergasbras">
+<img src="./imagem/hero3.png" alt="Supergasbras">
 <div class="mini-info">
 <h4>Supergasbras</h4>
 <span>Chega rápido</span>
@@ -298,7 +377,7 @@ alt="Botijão Turbo Gás">
 </div>
 
 <div class="mini-gas-card">
-<img src=".imagem/hero3.png" alt="Água 20L">
+<img src="./imagem/hero3.png" alt="Água 20L">
 <div class="mini-info">
 <h4>Água 20L</h4>
 <span>Gelada e lacrada</span>
@@ -314,7 +393,7 @@ alt="Botijão Turbo Gás">
 </div>
 
 <div class="mini-gas-card">
-<img src=".imagem/hero1.jpg" alt="Pagamento PIX">
+<img src="./imagem/hero1.jpg" alt="Pagamento PIX">
 <div class="mini-info">
 <h4>Pagamento PIX</h4>
 <span>Rápido e seguro</span>
@@ -344,7 +423,14 @@ alt="Botijão Turbo Gás">
 <div class="product-content">
 <h3>Ultragas</h3>
 <p>Entrega rápida • Gás premium</p>
-<h2>R$ 115,00</h2>
+
+<div class="price-list">
+<span><strong>Portaria:</strong> R$ 105,00 dinheiro ou PIX</span>
+<span><strong>Entrega:</strong> R$ 115,00 dinheiro ou PIX</span>
+<span><strong>Cartão entrega:</strong> R$ 120,00</span>
+</div>
+
+<h2>A partir de R$ 105,00</h2>
 
 <div class="qty-box">
 <button onclick="alterarQtd(this,-1)">-</button>
@@ -353,7 +439,7 @@ alt="Botijão Turbo Gás">
 </div>
 
 <button
-onclick="adicionarCarrinho('Ultragas',115)"
+onclick="adicionarCarrinho('Ultragas',105,115,120)"
 class="btn-product pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
@@ -374,7 +460,14 @@ Adicionar
 <div class="product-content">
 <h3>Supergasbras</h3>
 <p>Entrega rápida • Gás premium</p>
-<h2>R$ 125,00</h2>
+
+<div class="price-list">
+<span><strong>Portaria:</strong> R$ 110,00 dinheiro ou PIX</span>
+<span><strong>Entrega:</strong> R$ 125,00 dinheiro ou PIX</span>
+<span><strong>Cartão entrega:</strong> R$ 130,00</span>
+</div>
+
+<h2>A partir de R$ 110,00</h2>
 
 <div class="qty-box">
 <button onclick="alterarQtd(this,-1)">-</button>
@@ -383,7 +476,7 @@ Adicionar
 </div>
 
 <button
-onclick="adicionarCarrinho('Supergasbras',125)"
+onclick="adicionarCarrinho('Supergasbras',110,125,130)"
 class="btn-product pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
@@ -404,7 +497,7 @@ Adicionar
 <div class="product-content">
 <h3>Água Mineral 20L</h3>
 <p>Água gelada • Entrega rápida</p>
-<h2>R$ 18,00</h2>
+<h2>R$ 20,00</h2>
 
 <div class="qty-box">
 <button onclick="alterarQtd(this,-1)">-</button>
@@ -413,7 +506,7 @@ Adicionar
 </div>
 
 <button
-onclick="adicionarCarrinho('Água 20L',18)"
+onclick="adicionarCarrinho('Água 20L',20,20,20)"
 class="btn-product pulse-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
@@ -540,7 +633,7 @@ loading="lazy">
 
 <div class="footer-contact">
 
-<a href="https://wa.me/5531997044271">
+<a href="https://wa.me/5531997044271" target="_blank">
 <i class="fa-brands fa-whatsapp"></i>
 (31) 99704-4271
 </a>
@@ -584,6 +677,11 @@ www.pldigitalG.com.br
 
 <div id="cart-items"></div>
 
+<div class="cart-total">
+<span>Total</span>
+<strong id="cart-total">R$ 0,00</strong>
+</div>
+
 <button class="clear-cart-btn" onclick="esvaziarCarrinho()">
 <i class="fa-solid fa-trash"></i>
 Esvaziar carrinho
@@ -595,7 +693,7 @@ Esvaziar carrinho
 
 <label>
 <input type="radio" name="entrega" value="retirada">
-Retirada na porta - R$ 104,00
+Retirada na porta / Portaria
 </label>
 
 <label>
@@ -608,6 +706,27 @@ Entrega disponível para bairros próximos da:
 Rua João Lemos - Belo Horizonte MG
 CEP: 31995-150
 </p>
+
+</div>
+
+<div class="payment-options">
+
+<h3>Pagamento</h3>
+
+<label>
+<input type="radio" name="pagamento" value="pix" checked>
+PIX
+</label>
+
+<label>
+<input type="radio" name="pagamento" value="dinheiro">
+Dinheiro
+</label>
+
+<label>
+<input type="radio" name="pagamento" value="cartao">
+Cartão
+</label>
 
 </div>
 
@@ -624,7 +743,8 @@ CEP: 31995-150
 <textarea id="obs" placeholder="Observações"></textarea>
 
 <button type="submit" class="btn-primary modal-btn">
-Finalizar Pedido
+<i class="fa-brands fa-whatsapp"></i>
+Finalizar pedido no WhatsApp
 </button>
 
 </form>
@@ -689,7 +809,7 @@ span.innerText = qtd;
 
 }
 
-function adicionarCarrinho(produto,preco){
+function adicionarCarrinho(produto,precoRetirada,precoEntrega,precoCartao){
 
 const card =
 event.target.closest('.product-card');
@@ -699,11 +819,47 @@ parseInt(card.querySelector('.qty-box span').innerText);
 
 carrinho.push({
 produto,
-preco,
+precoRetirada,
+precoEntrega,
+precoCartao,
 qtd
 });
 
 atualizarCarrinho();
+mostrarToast();
+
+}
+
+function mostrarToast(){
+
+const toast =
+document.getElementById('toastAdd');
+
+toast.classList.add('show');
+
+setTimeout(()=>{
+toast.classList.remove('show');
+},1800);
+
+}
+
+function precoDoItem(item){
+
+const entrega =
+document.querySelector('input[name="entrega"]:checked')?.value || 'entrega';
+
+const pagamento =
+document.querySelector('input[name="pagamento"]:checked')?.value || 'pix';
+
+if(entrega === 'retirada'){
+return item.precoRetirada;
+}
+
+if(pagamento === 'cartao'){
+return item.precoCartao;
+}
+
+return item.precoEntrega;
 
 }
 
@@ -715,13 +871,21 @@ document.getElementById('cart-items');
 const cartCount =
 document.getElementById('cart-count');
 
+const cartTotal =
+document.getElementById('cart-total');
+
 cartItems.innerHTML = '';
 
 let totalItens = 0;
+let totalPedido = 0;
 
 carrinho.forEach((item)=>{
 
+const precoAtual = precoDoItem(item);
+const subtotal = precoAtual * item.qtd;
+
 totalItens += item.qtd;
+totalPedido += subtotal;
 
 cartItems.innerHTML += `
 
@@ -731,12 +895,12 @@ cartItems.innerHTML += `
 
 <h4>${item.produto}</h4>
 
-<p>${item.qtd}x • R$ ${item.preco}</p>
+<p>${item.qtd}x • R$ ${precoAtual.toFixed(2)}</p>
 
 </div>
 
 <strong>
-R$ ${(item.preco * item.qtd).toFixed(2)}
+R$ ${subtotal.toFixed(2)}
 </strong>
 
 </div>
@@ -746,6 +910,7 @@ R$ ${(item.preco * item.qtd).toFixed(2)}
 });
 
 cartCount.innerText = totalItens;
+cartTotal.innerText = `R$ ${totalPedido.toFixed(2)}`;
 
 }
 
@@ -766,6 +931,7 @@ document
 document.body.style.overflow = 'hidden';
 
 atualizarCamposEntrega();
+atualizarCarrinho();
 
 }
 
@@ -783,7 +949,17 @@ const radiosEntrega =
 document.querySelectorAll('input[name="entrega"]');
 
 radiosEntrega.forEach((radio)=>{
-radio.addEventListener('change', atualizarCamposEntrega);
+radio.addEventListener('change', ()=>{
+atualizarCamposEntrega();
+atualizarCarrinho();
+});
+});
+
+const radiosPagamento =
+document.querySelectorAll('input[name="pagamento"]');
+
+radiosPagamento.forEach((radio)=>{
+radio.addEventListener('change', atualizarCarrinho);
 });
 
 function atualizarCamposEntrega(){
@@ -840,18 +1016,35 @@ document.querySelector(
 'input[name="entrega"]:checked'
 ).value;
 
+const pagamento =
+document.querySelector(
+'input[name="pagamento"]:checked'
+).value;
+
+let totalPedido = 0;
+
 let mensagem =
 `Olá Turbo Gás!%0A%0A`;
 
 carrinho.forEach((item)=>{
 
+const precoAtual = precoDoItem(item);
+const subtotal = precoAtual * item.qtd;
+totalPedido += subtotal;
+
 mensagem +=
-`${item.qtd}x ${item.produto} - R$ ${item.preco}%0A`;
+`${item.qtd}x ${item.produto} - R$ ${precoAtual.toFixed(2)} cada - Total R$ ${subtotal.toFixed(2)}%0A`;
 
 });
 
 mensagem +=
-`%0ATipo de pedido: ${entrega === 'retirada' ? 'Retirada na porta' : 'Entrega a domicílio'}%0A`;
+`%0ATotal do pedido: R$ ${totalPedido.toFixed(2)}%0A`;
+
+mensagem +=
+`Tipo de pedido: ${entrega === 'retirada' ? 'Retirada na porta / Portaria' : 'Entrega a domicílio'}%0A`;
+
+mensagem +=
+`Pagamento: ${pagamento === 'pix' ? 'PIX' : pagamento === 'dinheiro' ? 'Dinheiro' : 'Cartão'}%0A`;
 
 mensagem +=
 `Nome: ${nome}%0A`;
@@ -899,6 +1092,7 @@ observer.observe(el);
 });
 
 atualizarCamposEntrega();
+atualizarCarrinho();
 
 </script>
 
