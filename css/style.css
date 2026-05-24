@@ -1,7 +1,6 @@
-```css
 /* =========================================
 TURBO GÁS PREMIUM CSS FINAL
-HERO FULL SCREEN PREMIUM
+HERO XIAOMI STYLE FULL IMAGE
 ========================================= */
 
 *{
@@ -21,17 +20,6 @@ body{
 font-family:'Inter',sans-serif;
 background:#020b26;
 color:#fff;
-
-background:
-radial-gradient(circle at top right,
-rgba(15,63,255,.24),
-transparent 35%),
-
-radial-gradient(circle at left,
-rgba(255,140,0,.08),
-transparent 30%),
-
-#020b26;
 }
 
 a{
@@ -51,23 +39,16 @@ cursor:pointer;
 font-family:'Inter',sans-serif;
 }
 
-/* =========================================
-ROOT
-========================================= */
-
 :root{
-
 --blue-dark:#031b4e;
 --blue-royal:#0f3fff;
 --orange:#ff9800;
+--orange-light:#ffb347;
 --white:#fff;
 --gray:#d7d7d7;
-
+--card-light:rgba(255,255,255,.88);
+--text-dark:#07183f;
 }
-
-/* =========================================
-CONTAINER
-========================================= */
 
 .container{
 width:100%;
@@ -76,9 +57,7 @@ margin:auto;
 padding:0 4%;
 }
 
-/* =========================================
-HEADER
-========================================= */
+/* HEADER */
 
 .header{
 position:fixed;
@@ -86,25 +65,16 @@ top:0;
 left:0;
 width:100%;
 z-index:999;
-padding:18px 0;
-transition:.4s;
-
-background:
-linear-gradient(
-90deg,
-rgba(2,11,38,.92),
-rgba(4,24,84,.96)
-);
-
-backdrop-filter:blur(16px);
-
-box-shadow:
-0 10px 35px rgba(0,0,0,.35);
+padding:16px 0;
+transition:.35s;
+background:rgba(2,11,38,.72);
+backdrop-filter:blur(18px);
+box-shadow:0 10px 35px rgba(0,0,0,.22);
 }
 
 .header.scrolled{
-padding:12px 0;
-background:rgba(2,11,38,.96);
+padding:11px 0;
+background:rgba(2,11,38,.94);
 }
 
 .nav-container{
@@ -117,61 +87,46 @@ gap:20px;
 .logo{
 display:flex;
 align-items:center;
-gap:14px;
+gap:13px;
 }
 
 .logo-icon{
-width:58px;
-height:58px;
-
+width:54px;
+height:54px;
 border-radius:18px;
-
-background:
-linear-gradient(
-135deg,
-#ff9800,
-#ffb347
-);
-
+background:linear-gradient(135deg,#ff9800,#ffbd55);
 display:flex;
 align-items:center;
 justify-content:center;
-
-font-size:1.5rem;
-
-box-shadow:
-0 0 30px rgba(255,152,0,.45);
+font-size:1.45rem;
+box-shadow:0 0 28px rgba(255,152,0,.38);
 }
 
 .logo-text h2{
-font-size:2.2rem;
+font-size:2rem;
 font-weight:900;
 font-family:'Montserrat',sans-serif;
 line-height:1;
 }
 
 .logo-text p{
-font-size:.78rem;
-color:#d7d7d7;
+font-size:.76rem;
+color:#e6e6e6;
 margin-top:4px;
 }
-
-/* =========================================
-NAVBAR
-========================================= */
 
 .navbar{
 display:flex;
 align-items:center;
-gap:34px;
-transition:.4s;
+gap:32px;
+transition:.35s;
 }
 
 .navbar a{
-font-size:.95rem;
+font-size:.94rem;
 font-weight:700;
-transition:.3s;
 position:relative;
+transition:.3s;
 }
 
 .navbar a::after{
@@ -179,7 +134,7 @@ content:'';
 position:absolute;
 left:0;
 bottom:-8px;
-width:0%;
+width:0;
 height:2px;
 background:#ff9800;
 transition:.3s;
@@ -193,54 +148,32 @@ color:#ff9800;
 width:100%;
 }
 
-/* =========================================
-CARRINHO
-========================================= */
-
 .cart-btn{
 display:flex;
 align-items:center;
 justify-content:center;
 gap:10px;
-
-padding:16px 28px;
-
-border-radius:22px;
-
-background:
-linear-gradient(
-135deg,
-#ff9800,
-#ffb000
-);
-
-font-weight:800;
+padding:15px 25px;
+border-radius:20px;
+background:linear-gradient(135deg,#ff9800,#ffb300);
+font-weight:900;
 color:#fff;
-
-box-shadow:
-0 0 35px rgba(255,152,0,.45);
-
-transition:.35s;
-
-animation:pulseButton 2s infinite;
+box-shadow:0 0 30px rgba(255,152,0,.42);
+transition:.3s;
 }
 
 .cart-btn:hover{
-transform:translateY(-4px) scale(1.03);
+transform:translateY(-3px) scale(1.02);
 }
 
 .cart-btn span{
 width:24px;
 height:24px;
-
 border-radius:50%;
-
 background:rgba(255,255,255,.22);
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 font-size:.75rem;
 }
 
@@ -250,110 +183,70 @@ font-size:1.8rem;
 cursor:pointer;
 }
 
-/* =========================================
-HERO
-========================================= */
+/* HERO XIAOMI STYLE */
 
 .hero{
 position:relative;
-overflow:hidden;
 min-height:100vh;
-
+overflow:hidden;
 display:flex;
 align-items:center;
-
-padding:
-170px
-0
-90px;
-
-background:
-linear-gradient(
-90deg,
-rgba(2,11,38,.98) 0%,
-rgba(2,11,38,.88) 35%,
-rgba(2,11,38,.45) 60%,
-rgba(2,11,38,.10) 100%
-);
+justify-content:center;
+padding:150px 0 90px;
+background:#020b26;
 }
 
-/* HERO IMAGEM 100% */
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:url('../imagem/hero1.png') center right / cover no-repeat;
+z-index:1;
+transform:scale(1.01);
+}
 
 .hero::after{
 content:'';
-
-position:absolute;
-top:0;
-right:0;
-
-width:100%;
-height:100%;
-
-background:url('../imagem/hero1.png');
-background-size:cover;
-background-position:center right;
-background-repeat:no-repeat;
-
-z-index:1;
-}
-
-/* OVERLAY */
-
-.hero-overlay{
 position:absolute;
 inset:0;
-
-background:
-linear-gradient(
-90deg,
-rgba(2,11,38,.98) 0%,
-rgba(2,11,38,.92) 28%,
-rgba(2,11,38,.58) 55%,
-rgba(2,11,38,.14) 100%
-);
-
 z-index:2;
+background:
+linear-gradient(90deg,rgba(2,11,38,.82) 0%,rgba(2,11,38,.50) 38%,rgba(2,11,38,.12) 72%,rgba(2,11,38,.04) 100%),
+linear-gradient(180deg,rgba(2,11,38,.38) 0%,rgba(2,11,38,.06) 46%,rgba(2,11,38,.75) 100%);
 }
-
-/* HERO GRID */
 
 .hero-grid{
 position:relative;
 z-index:5;
-
-display:grid;
-grid-template-columns:
-0.85fr
-1.15fr;
-
+width:100%;
+display:flex;
 align-items:center;
-
-gap:40px;
+justify-content:center;
+text-align:center;
 }
 
 .hero-content{
-max-width:560px;
+max-width:720px;
+margin:auto;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
 .hero-badge{
 display:inline-flex;
 align-items:center;
-gap:10px;
-
-padding:12px 18px;
-
+justify-content:center;
+gap:9px;
+padding:10px 18px;
 border-radius:50px;
-
-background:rgba(255,255,255,.08);
-
-border:1px solid rgba(255,255,255,.10);
-
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.18);
 backdrop-filter:blur(12px);
-
-margin-bottom:28px;
-
+margin-bottom:22px;
 font-size:.82rem;
-font-weight:700;
+font-weight:800;
+letter-spacing:.2px;
 }
 
 .hero-badge i{
@@ -361,144 +254,67 @@ color:#ff9800;
 }
 
 .hero-content h1{
-font-size:5.4rem;
+font-size:5.8rem;
 line-height:.92;
 letter-spacing:-4px;
 font-weight:900;
-
 font-family:'Montserrat',sans-serif;
-
-margin-bottom:24px;
+margin-bottom:22px;
+text-shadow:0 12px 35px rgba(0,0,0,.42);
 }
 
 .hero-content h1 span{
 display:block;
 color:#ff9800;
-
-text-shadow:
-0 0 35px rgba(255,152,0,.35);
+text-shadow:0 0 36px rgba(255,152,0,.38);
 }
 
 .hero-content p{
-font-size:1.06rem;
-line-height:1.9;
-color:#d7d7d7;
-
-margin-bottom:40px;
+max-width:560px;
+font-size:1.08rem;
+line-height:1.75;
+color:#f4f4f4;
+margin-bottom:34px;
+text-shadow:0 8px 28px rgba(0,0,0,.45);
 }
 
-/* =========================================
-BOTAO HERO
-========================================= */
-
 .hero-buttons{
+width:100%;
 display:flex;
-justify-content:flex-start;
+justify-content:center;
 align-items:center;
 }
 
 .hero-main-btn{
-min-width:320px;
-
-padding:24px 40px;
-
-border-radius:26px;
-
+min-width:330px;
+padding:23px 42px;
+border-radius:999px;
 font-size:1.08rem;
-font-weight:900;
-
+font-weight:950;
+letter-spacing:.4px;
 display:flex;
 align-items:center;
 justify-content:center;
-gap:14px;
-
+gap:13px;
 color:#fff;
-
-background:
-linear-gradient(
-135deg,
-#ff9800,
-#ffb300
-);
-
-box-shadow:
-0 0 45px rgba(255,152,0,.55);
-
-animation:pulseButton 1.8s infinite;
-
+background:linear-gradient(135deg,#ff8c00,#ffb300);
+box-shadow:0 18px 50px rgba(255,152,0,.50);
+animation:pulseButton 1.9s infinite;
 transition:.35s;
 }
 
 .hero-main-btn:hover{
 transform:translateY(-5px) scale(1.03);
+box-shadow:0 24px 65px rgba(255,152,0,.65);
 }
-
-/* =========================================
-FEATURES
-========================================= */
 
 .hero-features{
-display:flex;
-gap:16px;
-margin-top:40px;
-flex-wrap:wrap;
+display:none;
 }
-
-.feature-card{
-flex:1;
-min-width:170px;
-
-padding:22px;
-
-border-radius:24px;
-
-background:rgba(255,255,255,.06);
-
-border:1px solid rgba(255,255,255,.08);
-
-backdrop-filter:blur(16px);
-
-transition:.35s;
-}
-
-.feature-card:hover{
-transform:translateY(-6px);
-
-border-color:rgba(255,152,0,.35);
-
-box-shadow:
-0 0 35px rgba(0,76,255,.16);
-}
-
-.feature-card i{
-font-size:1.5rem;
-color:#ff9800;
-margin-bottom:12px;
-}
-
-.feature-card h4{
-font-size:1rem;
-margin-bottom:6px;
-}
-
-.feature-card p{
-font-size:.84rem;
-color:#c7d0ef;
-line-height:1.5;
-}
-
-/* =========================================
-HERO IMAGE
-========================================= */
 
 .hero-image{
 position:absolute;
-top:0;
-right:0;
-
-width:100%;
-height:100%;
-
+inset:0;
 z-index:1;
 pointer-events:none;
 }
@@ -507,79 +323,58 @@ pointer-events:none;
 display:none;
 }
 
-/* =========================================
-DELIVERY CARD
-========================================= */
-
 .delivery-card{
 position:absolute;
-
-right:60px;
-bottom:50px;
-
-z-index:20;
-
+right:42px;
+bottom:42px;
+z-index:8;
 width:290px;
-
-padding:28px;
-
-border-radius:28px;
-
-background:rgba(255,255,255,.08);
-
+padding:22px;
+border-radius:26px;
+background:rgba(255,255,255,.88);
+color:#07183f;
 backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.10);
-
-box-shadow:
-0 0 40px rgba(0,76,255,.22);
+border:1px solid rgba(255,255,255,.45);
+box-shadow:0 22px 55px rgba(0,0,0,.22);
 }
 
 .delivery-item{
 display:flex;
 align-items:flex-start;
-gap:16px;
+gap:14px;
 }
 
 .delivery-item i{
-font-size:1.3rem;
+font-size:1.2rem;
 color:#ff9800;
 margin-top:4px;
 }
 
 .delivery-item h4{
-font-size:1rem;
-margin-bottom:5px;
+font-size:.98rem;
+font-weight:900;
+margin-bottom:4px;
 }
 
 .delivery-item p{
-font-size:.88rem;
-color:#d7d7d7;
-line-height:1.6;
+font-size:.86rem;
+color:#26345f;
+line-height:1.55;
 }
 
 .divider{
 width:100%;
 height:1px;
-background:rgba(255,255,255,.10);
-margin:20px 0;
+background:rgba(3,27,78,.12);
+margin:17px 0;
 }
 
-/* =========================================
-SLIDER
-========================================= */
+/* SLIDER */
 
 .gas-slider{
 padding:34px 0;
 overflow:hidden;
-
-background:
-linear-gradient(
-180deg,
-#03133f,
-#041b5c
-);
-
+background:linear-gradient(180deg,#03133f,#041b5c);
 border-top:1px solid rgba(255,255,255,.06);
 border-bottom:1px solid rgba(255,255,255,.06);
 }
@@ -589,7 +384,6 @@ display:flex;
 align-items:center;
 gap:24px;
 width:max-content;
-
 animation:sliderMove 18s linear infinite;
 }
 
@@ -601,60 +395,62 @@ animation-play-state:paused;
 display:flex;
 align-items:center;
 gap:14px;
-
 min-width:300px;
-
 padding:18px 22px;
-
 border-radius:24px;
-
-background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,255,255,.08);
-
-backdrop-filter:blur(12px);
-
+background:rgba(255,255,255,.90);
+color:#07183f;
+border:1px solid rgba(255,255,255,.50);
+box-shadow:0 14px 35px rgba(0,0,0,.18);
 transition:.35s;
 }
 
 .mini-gas-card:hover{
 transform:translateY(-5px);
-
-border-color:rgba(255,152,0,.35);
-
-box-shadow:
-0 0 35px rgba(255,152,0,.16);
+box-shadow:0 20px 45px rgba(255,152,0,.18);
 }
 
 .mini-gas-card img{
 width:72px;
 height:72px;
-
 object-fit:cover;
-
 border-radius:18px;
+background:#fff;
 }
 
-/* =========================================
-PRODUTOS
-========================================= */
+.mini-info h4{
+font-size:1rem;
+font-weight:900;
+}
+
+.mini-info span{
+font-size:.82rem;
+font-weight:700;
+color:#345;
+}
+
+/* PRODUTOS */
 
 .products{
 padding:100px 0;
+background:
+radial-gradient(circle at top right,rgba(15,63,255,.18),transparent 34%),
+#020b26;
 }
 
 .section-header{
 display:flex;
 align-items:center;
-justify-content:space-between;
+justify-content:center;
+text-align:center;
 margin-bottom:50px;
-gap:20px;
 }
 
 .section-header h2{
 font-size:3rem;
 font-weight:900;
 font-family:'Montserrat',sans-serif;
+letter-spacing:-1.5px;
 }
 
 .products-grid{
@@ -665,27 +461,18 @@ gap:30px;
 
 .product-card{
 position:relative;
-
-padding:24px;
-
+padding:22px;
 border-radius:34px;
-
-background:rgba(255,255,255,.06);
-
-border:1px solid rgba(255,255,255,.08);
-
-backdrop-filter:blur(16px);
-
+background:rgba(255,255,255,.92);
+color:#07183f;
+border:1px solid rgba(255,255,255,.55);
+box-shadow:0 22px 55px rgba(0,0,0,.20);
 transition:.35s;
 }
 
 .product-card:hover{
 transform:translateY(-8px);
-
-border-color:rgba(255,152,0,.35);
-
-box-shadow:
-0 0 40px rgba(255,152,0,.15);
+box-shadow:0 28px 70px rgba(255,152,0,.18);
 }
 
 .product-image{
@@ -693,6 +480,7 @@ height:280px;
 border-radius:28px;
 overflow:hidden;
 margin-bottom:24px;
+background:#eef3ff;
 }
 
 .product-image img{
@@ -708,104 +496,127 @@ transform:scale(1.06);
 
 .product-content h3{
 font-size:1.7rem;
-margin-bottom:10px;
-font-weight:900;
+margin-bottom:9px;
+font-weight:950;
 }
 
 .product-content p{
 font-size:.92rem;
-color:#d7d7d7;
+color:#43506f;
 margin-bottom:16px;
+font-weight:600;
 }
 
 .product-content h2{
 font-size:2rem;
-color:#ff9800;
+color:#ff8c00;
 margin-bottom:18px;
 }
-
-/* =========================================
-QTD + E -
-========================================= */
 
 .qty-box{
 display:flex;
 align-items:center;
 justify-content:center;
 gap:14px;
-
 margin-bottom:22px;
 }
 
 .qty-box button{
 width:44px;
 height:44px;
-
 border-radius:14px;
-
-background:#102559;
-
-color:#fff;
-
-font-size:1.2rem;
-font-weight:900;
-
+background:#eef3ff;
+color:#07183f;
+font-size:1.25rem;
+font-weight:950;
 transition:.3s;
 }
 
 .qty-box button:hover{
 background:#ff9800;
+color:#fff;
 }
 
 .qty-box span{
 font-size:1.1rem;
-font-weight:800;
+font-weight:900;
 min-width:20px;
 text-align:center;
 }
 
-/* =========================================
-BOTAO PRODUTO
-========================================= */
-
 .btn-product{
 width:100%;
-
 padding:20px;
-
 border-radius:22px;
-
-background:
-linear-gradient(
-135deg,
-#ff9800,
-#ffb300
-);
-
+background:linear-gradient(135deg,#ff8c00,#ffb300);
 font-size:1rem;
-font-weight:900;
+font-weight:950;
 color:#fff;
-
 display:flex;
 align-items:center;
 justify-content:center;
 gap:12px;
-
+box-shadow:0 16px 38px rgba(255,152,0,.32);
 animation:pulseButton 2s infinite;
 }
 
-/* =========================================
-SOBRE
-========================================= */
+/* COMO FUNCIONA */
+
+.info-bar{
+overflow:hidden;
+padding:38px 0;
+background:#041b5c;
+}
+
+.info-grid{
+display:flex;
+gap:16px;
+overflow:hidden;
+}
+
+.info-item{
+min-width:260px;
+background:linear-gradient(135deg,#ffffff,#fff3df);
+color:#031b4e;
+border:1px solid rgba(255,152,0,.35);
+box-shadow:0 12px 35px rgba(0,0,0,.22);
+border-radius:22px;
+padding:18px;
+display:flex;
+align-items:center;
+gap:14px;
+animation:infoSlide 18s linear infinite;
+}
+
+.info-item i{
+width:46px;
+height:46px;
+border-radius:16px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#ff9800;
+color:#fff;
+font-size:20px;
+}
+
+.info-item h4{
+font-size:15px;
+font-weight:950;
+margin-bottom:4px;
+}
+
+.info-item p{
+font-size:13px;
+font-weight:700;
+color:#334;
+}
+
+/* SOBRE */
 
 .sobre{
 padding:100px 0;
-background:
-linear-gradient(
-180deg,
-#041b5c,
-#020b26
-);
+background:linear-gradient(180deg,#041b5c,#020b26);
 }
 
 .sobre-grid{
@@ -815,102 +626,90 @@ gap:30px;
 }
 
 .sobre-card{
-padding:35px;
+padding:34px;
 border-radius:30px;
-
-background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,255,255,.08);
-
-backdrop-filter:blur(14px);
+background:rgba(255,255,255,.92);
+color:#07183f;
+border:1px solid rgba(255,255,255,.55);
+box-shadow:0 22px 55px rgba(0,0,0,.18);
 }
 
 .sobre-card h3{
 font-size:1.5rem;
-margin-bottom:18px;
-color:#ff9800;
+margin-bottom:16px;
+color:#ff8c00;
+font-weight:950;
 }
 
 .sobre-card p{
-line-height:1.9;
-color:#d7d7d7;
+line-height:1.85;
+color:#33405f;
+font-weight:500;
 }
 
-/* =========================================
-MODAL CARRINHO
-========================================= */
+/* CARRINHO */
 
 .cart-modal{
 position:fixed;
 inset:0;
-
-background:rgba(0,0,0,.8);
-
+background:rgba(0,0,0,.78);
 display:none;
 align-items:center;
 justify-content:center;
-
 padding:20px;
-
 z-index:9999;
 }
 
 .cart-content{
 width:100%;
 max-width:540px;
-
-background:#08173f;
-
-padding:35px;
-
+background:#ffffff;
+color:#07183f;
+padding:32px;
 border-radius:30px;
-
-border:1px solid rgba(255,255,255,.08);
-
+border:1px solid rgba(255,255,255,.50);
 max-height:92vh;
 overflow:auto;
+box-shadow:0 30px 80px rgba(0,0,0,.35);
 }
 
 .cart-header{
 display:flex;
 align-items:center;
 justify-content:space-between;
-
-margin-bottom:25px;
+margin-bottom:24px;
 }
 
 .cart-header h2{
 font-size:2rem;
+font-weight:950;
 }
 
 .cart-header button{
 background:none;
 border:none;
 font-size:2rem;
-color:#fff;
+color:#07183f;
 }
 
 .cart-item{
 display:flex;
 align-items:center;
 justify-content:space-between;
-
 padding:18px 0;
-
-border-bottom:1px solid rgba(255,255,255,.08);
+border-bottom:1px solid rgba(3,27,78,.10);
 }
 
 .delivery-options{
-margin-top:25px;
+margin-top:24px;
 padding:20px;
-
 border-radius:20px;
-
-background:rgba(255,255,255,.05);
+background:#f2f6ff;
 }
 
 .delivery-options h3{
 margin-bottom:18px;
+font-weight:950;
 }
 
 .delivery-options label{
@@ -918,90 +717,73 @@ display:flex;
 gap:10px;
 margin-bottom:14px;
 line-height:1.6;
+font-weight:700;
 }
 
 .delivery-info{
 font-size:.86rem;
-color:#c7d0ef;
+color:#405078;
 margin-top:12px;
 line-height:1.7;
 }
 
-/* =========================================
-FORM
-========================================= */
+.clear-cart-btn{
+width:100%;
+margin:12px 0 18px;
+padding:14px 16px;
+border-radius:16px;
+background:#fff1f1;
+color:#d80000;
+border:1px solid rgba(216,0,0,.25);
+font-weight:950;
+cursor:pointer;
+}
 
-.modal-content input,
-.modal-content textarea,
+.delivery-fields.hidden{
+display:none;
+}
+
 .cart-content input,
 .cart-content textarea{
 width:100%;
-
 padding:18px;
-
 margin-bottom:18px;
-
 border:none;
 outline:none;
-
 border-radius:18px;
-
-background:#102559;
-
-color:#fff;
-
+background:#f2f6ff;
+color:#07183f;
 resize:none;
+font-weight:600;
 }
 
 .modal-btn{
 width:100%;
-
 padding:20px;
-
-border:none;
-
 border-radius:20px;
-
-background:
-linear-gradient(
-135deg,
-#ff9800,
-#ffb300
-);
-
+background:linear-gradient(135deg,#ff8c00,#ffb300);
 font-size:1rem;
-font-weight:900;
+font-weight:950;
 color:#fff;
-
 cursor:pointer;
-
+box-shadow:0 16px 38px rgba(255,152,0,.32);
 animation:pulseButton 2s infinite;
 }
 
-/* =========================================
-MAPA
-========================================= */
+/* MAPA */
 
 .maps iframe{
 width:100%;
 height:520px;
 border:none;
+display:block;
 }
 
-/* =========================================
-FOOTER
-========================================= */
+/* FOOTER */
 
 .footer{
 padding:70px 4%;
-
-background:
-linear-gradient(
-135deg,
-#010918,
-#021a4f,
-#010918
-);
+background:linear-gradient(135deg,#010918,#021a4f,#010918);
 }
 
 .footer-content{
@@ -1009,9 +791,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-
 gap:20px;
-
 text-align:center;
 }
 
@@ -1028,180 +808,104 @@ color:#ff9800;
 
 .footer-logo h3{
 font-size:2rem;
-font-weight:900;
+font-weight:950;
 }
 
 .footer-contact a{
 color:#ff9800;
+font-weight:900;
 }
 
-/* =========================================
-WHATS
-========================================= */
+/* WHATSAPP */
 
 .floating-whatsapp{
 position:fixed;
 right:25px;
 bottom:65px;
-
-width:68px;
-height:68px;
-
+width:64px;
+height:64px;
 border-radius:50%;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
-background:
-linear-gradient(
-135deg,
-#00c853,
-#00e676
-);
-
-font-size:2rem;
-
-box-shadow:
-0 0 35px rgba(0,230,118,.45);
-
+background:linear-gradient(135deg,#00c853,#00e676);
+font-size:1.9rem;
+box-shadow:0 0 35px rgba(0,230,118,.45);
 z-index:999;
-
 animation:pulseButton 2s infinite;
 }
 
-/* =========================================
-PL CREDIT
-========================================= */
+/* CRÉDITO */
 
 .pl-credit{
 position:fixed;
 right:18px;
 bottom:12px;
-
 z-index:999;
-
 font-size:.78rem;
-font-weight:800;
-
+font-weight:900;
 color:#00ff6a;
+text-shadow:0 0 12px rgba(0,255,106,.45);
 }
 
-/* =========================================
-ANIMATIONS
-========================================= */
+/* ANIMAÇÕES */
 
 .fade-up{
 animation:fadeUp 1s ease forwards;
 }
 
 @keyframes fadeUp{
-
 from{
 opacity:0;
 transform:translateY(40px);
 }
-
 to{
 opacity:1;
 transform:translateY(0);
 }
-
 }
 
 @keyframes pulseButton{
-
 0%{
 transform:scale(1);
 }
-
 50%{
-transform:scale(1.04);
+transform:scale(1.035);
 }
-
 100%{
 transform:scale(1);
 }
-
 }
 
 @keyframes sliderMove{
-
 0%{
 transform:translateX(0);
 }
-
 100%{
 transform:translateX(-50%);
 }
-
 }
 
-/* =========================================
-RESPONSIVO
-========================================= */
+@keyframes infoSlide{
+0%{
+transform:translateX(100%);
+}
+100%{
+transform:translateX(-460%);
+}
+}
+
+/* RESPONSIVO */
 
 @media(max-width:1200px){
-
-.hero{
-padding-top:140px;
-}
-
-.hero::after{
-opacity:.18;
-background-position:center;
-}
-
-.hero-overlay{
-background:
-linear-gradient(
-180deg,
-rgba(2,11,38,.94),
-rgba(2,11,38,.90)
-);
-}
-
-.hero-grid{
-grid-template-columns:1fr;
-}
-
-.hero-content{
-max-width:100%;
-text-align:center;
-}
-
-.hero-buttons{
-justify-content:center;
-}
-
-.hero-features{
-justify-content:center;
-}
-
-.hero-image{
-display:none;
-}
-
-.delivery-card{
-position:relative;
-
-right:auto;
-bottom:auto;
-
-margin:40px auto 0;
-}
 
 .navbar{
 position:absolute;
 top:100%;
 left:0;
-
 width:100%;
-
 background:#02133f;
-
 padding:30px;
-
 display:none;
 flex-direction:column;
 align-items:flex-start;
@@ -1216,69 +920,209 @@ display:flex;
 display:block;
 }
 
+.hero{
+padding:140px 0 80px;
+}
+
+.hero::before{
+background-position:68% center;
+}
+
+.hero::after{
+background:
+linear-gradient(180deg,rgba(2,11,38,.72) 0%,rgba(2,11,38,.36) 42%,rgba(2,11,38,.82) 100%);
+}
+
+.hero-content{
+max-width:680px;
+}
+
+.hero-content h1{
+font-size:4.7rem;
+}
+
+.delivery-card{
+right:28px;
+bottom:28px;
+}
+
 }
 
 @media(max-width:768px){
 
+.header{
+padding:12px 0;
+}
+
+.logo-icon{
+width:48px;
+height:48px;
+border-radius:16px;
+}
+
+.logo-text h2{
+font-size:1.45rem;
+}
+
+.logo-text p{
+font-size:.68rem;
+}
+
+.cart-btn{
+padding:12px 15px;
+font-size:.82rem;
+border-radius:16px;
+}
+
 .hero{
-padding:
-130px
-0
-80px;
+min-height:100svh;
+padding:125px 0 70px;
+align-items:center;
+}
+
+.hero::before{
+background-position:72% center;
+}
+
+.hero::after{
+background:
+linear-gradient(180deg,rgba(2,11,38,.58) 0%,rgba(2,11,38,.24) 38%,rgba(2,11,38,.92) 100%);
+}
+
+.hero-grid{
+align-items:flex-end;
+min-height:calc(100svh - 190px);
+}
+
+.hero-content{
+justify-content:flex-end;
+padding-top:210px;
+}
+
+.hero-badge{
+font-size:.74rem;
+padding:9px 14px;
+margin-bottom:16px;
 }
 
 .hero-content h1{
-font-size:3.1rem;
-line-height:1;
+font-size:3.05rem;
+line-height:.96;
 letter-spacing:-2px;
+margin-bottom:16px;
+}
+
+.hero-content p{
+font-size:.94rem;
+line-height:1.62;
+margin-bottom:24px;
+max-width:92%;
 }
 
 .hero-main-btn{
 width:100%;
 min-width:100%;
-}
-
-.hero-features{
-flex-direction:column;
-}
-
-.feature-card{
-width:100%;
+padding:20px 24px;
+font-size:1rem;
 }
 
 .delivery-card{
-width:100%;
-max-width:340px;
+display:none;
+}
+
+.products{
+padding:80px 0;
+}
+
+.section-header h2{
+font-size:2.25rem;
 }
 
 .products-grid{
 grid-template-columns:1fr;
+gap:24px;
+}
+
+.product-card{
+border-radius:28px;
+padding:18px;
+}
+
+.product-image{
+height:235px;
+border-radius:24px;
+}
+
+.sobre{
+padding:80px 0;
+}
+
+.sobre-card{
+border-radius:26px;
+padding:28px;
+}
+
+.info-item{
+min-width:240px;
+padding:15px;
+}
+
+.cart-content{
+width:94%;
+max-height:92vh;
+overflow-y:auto;
+border-radius:24px;
+padding:26px;
 }
 
 .maps iframe{
 height:400px;
 }
 
+@keyframes infoSlide{
+0%{
+transform:translateX(100%);
+}
+100%{
+transform:translateX(-520%);
+}
+}
+
 }
 
 @media(max-width:520px){
 
-.logo-text h2{
-font-size:1.5rem;
+.container{
+padding:0 5%;
+}
+
+.hero{
+padding-top:112px;
+}
+
+.hero::before{
+background-position:76% center;
+}
+
+.hero-content{
+padding-top:235px;
 }
 
 .hero-content h1{
-font-size:2.4rem;
+font-size:2.55rem;
+letter-spacing:-1.5px;
 }
 
 .hero-content p{
-font-size:.95rem;
-line-height:1.7;
+font-size:.9rem;
 }
 
-.hero::after{
-background-position:70% center;
-opacity:.22;
+.hero-main-btn{
+border-radius:22px;
+}
+
+.mini-gas-card{
+min-width:260px;
 }
 
 .product-image{
@@ -1286,10 +1130,16 @@ height:220px;
 }
 
 .floating-whatsapp{
-width:60px;
-height:60px;
-font-size:1.7rem;
+width:58px;
+height:58px;
+font-size:1.65rem;
+right:18px;
+bottom:62px;
+}
+
+.pl-credit{
+font-size:.68rem;
+right:12px;
 }
 
 }
-```
