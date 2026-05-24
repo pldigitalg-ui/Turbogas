@@ -1927,3 +1927,139 @@ html body main section.hero#inicio::before{
     font-size:.78rem !important;
   }
 }
+/* =====================================================
+TURBO GÁS - PRODUTOS PREMIUM / REMOVE VISUAL FEIO
+COLE NO FINAL DO CSS
+===================================================== */
+
+/* remove o fogo gigante fake */
+.product-image::after{
+  display:none !important;
+  content:none !important;
+}
+
+/* fundo geral mais premium */
+.products{
+  background:
+    radial-gradient(circle at top right,rgba(15,63,255,.20),transparent 36%),
+    linear-gradient(180deg,#06184a 0%,#020b26 100%) !important;
+}
+
+/* título */
+.section-header h2{
+  color:#fff !important;
+  text-shadow:0 10px 30px rgba(0,0,0,.35) !important;
+}
+
+/* grid mais elegante */
+.products-grid{
+  gap:26px !important;
+  align-items:stretch !important;
+}
+
+/* card premium escuro, não branco estourado */
+.product-card{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.055)) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  border-radius:30px !important;
+  padding:16px !important;
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.34),
+    inset 0 1px 0 rgba(255,255,255,.10) !important;
+  backdrop-filter:blur(16px) !important;
+  overflow:hidden !important;
+}
+
+/* imagem com cara de app grande */
+.product-image{
+  height:250px !important;
+  border-radius:24px !important;
+  margin-bottom:18px !important;
+  background:
+    radial-gradient(circle at 70% 20%,rgba(255,152,0,.20),transparent 30%),
+    linear-gradient(135deg,#071b55,#020b26) !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+  overflow:hidden !important;
+}
+
+.product-image img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  border-radius:24px !important;
+}
+
+/* texto do card */
+.product-content h3{
+  color:#fff !important;
+  font-size:1.35rem !important;
+  line-height:1.15 !important;
+  margin-bottom:8px !important;
+}
+
+.product-content p{
+  color:rgba(255,255,255,.72) !important;
+  font-size:.86rem !important;
+  line-height:1.45 !important;
+  margin-bottom:14px !important;
+}
+
+.product-content h2{
+  color:#ff9800 !important;
+  font-size:1.7rem !important;
+  margin-bottom:16px !important;
+  text-shadow:0 0 20px rgba(255,152,0,.22) !important;
+}
+
+/* botão premium */
+.btn-product{
+  border-radius:18px !important;
+  padding:17px 18px !important;
+  background:linear-gradient(135deg,#ff8c00,#ffb300) !important;
+  box-shadow:0 16px 38px rgba(255,152,0,.28) !important;
+}
+
+/* lightbox/cards extras menos brancos */
+.delivery-card,
+.sobre-card,
+.cart-content,
+.mini-gas-card,
+.info-item,
+.delivery-options{
+  background:linear-gradient(135deg,rgba(255,255,255,.88),rgba(226,235,250,.78)) !important;
+  border:1px solid rgba(255,255,255,.30) !important;
+  box-shadow:0 24px 65px rgba(0,0,0,.24) !important;
+}
+
+/* mobile */
+@media(max-width:768px){
+  .products{
+    padding:70px 0 !important;
+  }
+
+  .products-grid{
+    grid-template-columns:1fr !important;
+    gap:22px !important;
+  }
+
+  .product-card{
+    border-radius:26px !important;
+    padding:14px !important;
+  }
+
+  .product-image{
+    height:220px !important;
+    border-radius:22px !important;
+  }
+
+  .product-content h3{
+    font-size:1.25rem !important;
+  }
+
+  .product-content h2{
+    font-size:1.55rem !important;
+  }
+}
